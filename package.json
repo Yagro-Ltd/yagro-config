@@ -1,0 +1,57 @@
+{
+  "name": "@yagro/config",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Horne",
+  "license": "ISC",
+  "devDependencies": {
+    "@nuxt/eslint-config": "^1.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-vue": "^10.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "unocss": "^66.1.0-beta.12",
+    "vue-eslint-parser": "^10.1.3"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-storybook": "^0.6.10",
+    "vue-eslint-parser": "^9.0.0"
+  },
+  "exports": {
+    "./eslint/v8": {
+      "import": "./dist/eslint/v8.js",
+      "types": "./dist/eslint/v8.d.ts"
+    },
+    "./eslint/v9": {
+      "import": "./dist/eslint/v9.js",
+      "types": "./dist/eslint/v9.d.ts"
+    },
+    "./prettier": {
+      "import": "./dist/prettier/index.js",
+      "types": "./dist/prettier/index.d.ts"
+    },
+    "./tsconfig": "./tsconfig/index.json",
+    "./unocss": {
+      "import": "./dist/unocss/index.js",
+      "types": "./dist/unocss/index.d.ts"
+    }
+  }
+}
