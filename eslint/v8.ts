@@ -1,7 +1,6 @@
 import type { ESLint } from 'eslint';
 
 const config: ESLint.ConfigData = {
-  root: true,
   extends: [
     '@nuxt/eslint-config',
     'eslint:recommended',
@@ -16,6 +15,7 @@ const config: ESLint.ConfigData = {
     onMounted: 'readonly',
     useNuxtApp: 'readonly',
   },
+  ignorePatterns: ['node_modules/**'],
   overrides: [
     {
       files: ['pages/**', 'layouts/**'],
@@ -24,36 +24,15 @@ const config: ESLint.ConfigData = {
       },
     },
   ],
-  ignorePatterns: ['node_modules/**'],
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
   plugins: ['sort-keys-fix', 'prettier'],
+  root: true,
   rules: {
-    'comma-dangle': ['error', 'only-multiline'],
-    'comma-spacing': [
-      'error',
-      {
-        after: true,
-        before: false,
-      },
-    ],
-    eqeqeq: 'off',
-    'import/no-absolute-path': 'off',
-    'require-await': 'warn',
-    'sort-imports': 'off',
-    'sort-keys-fix/sort-keys-fix': 'off', // warn only because --fixed
-    'sort-vars': 'warn', // warn only because --fixed
-    'space-infix-ops': 'error',
-    'vue/this-in-template': 'error',
-    // Rules to be re-enabled after build has been fixed
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    'vue/no-reserved-component-names': 'off',
-    'vue/no-multiple-template-root': 'off',
+    'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
       'error',
       {
@@ -79,7 +58,6 @@ const config: ESLint.ConfigData = {
         ],
       },
     ],
-    'simple-import-sort/exports': 'error',
   },
 };
 

@@ -1,11 +1,11 @@
 const config = {
-    semi: true,
-    trailingComma: "es5",
+    arrowParens: 'always',
     printWidth: 100,
-    tabWidth: 2,
+    proseWrap: 'preserve',
+    semi: true,
     singleQuote: true,
-    arrowParens: "always",
-    proseWrap: "preserve",
+    tabWidth: 2,
+    trailingComma: 'es5',
     vueIndentScriptAndStyle: true,
 };
 export default config;

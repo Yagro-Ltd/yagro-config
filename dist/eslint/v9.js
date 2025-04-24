@@ -1,19 +1,17 @@
-import * as tsParser from '@typescript-eslint/parser';
-import vueParser from 'vue-eslint-parser';
-import pluginVue from 'eslint-plugin-vue';
+import eslintPluginJsonc from 'eslint-plugin-jsonc';
 import pluginPrettier from 'eslint-plugin-prettier';
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 import pluginStorybook from 'eslint-plugin-storybook';
-import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import pluginVue from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
+import json from '@eslint/json';
+import * as tsParser from '@typescript-eslint/parser';
 export default [
     {
         files: ['**/*.{ts,vue}'],
+        ignores: ['node_modules/**'],
         languageOptions: {
-            parser: vueParser,
-            parserOptions: {
-                parser: tsParser,
-                sourceType: 'module',
-            },
             globals: {
                 ComputedRef: 'readonly',
                 computed: 'readonly',
@@ -22,30 +20,23 @@ export default [
                 onMounted: 'readonly',
                 useNuxtApp: 'readonly',
             },
+            parser: vueParser,
+            parserOptions: {
+                parser: tsParser,
+                sourceType: 'module',
+            },
         },
         plugins: {
-            vue: pluginVue,
+            json,
             prettier: pluginPrettier,
+            'simple-import-sort': pluginSimpleImportSort,
             'sort-keys-fix': pluginSortKeysFix,
             storybook: pluginStorybook,
-            'simple-import-sort': pluginSimpleImportSort,
+            vue: pluginVue,
         },
         rules: {
-            'comma-dangle': ['error', 'only-multiline'],
-            'comma-spacing': ['error', { after: true, before: false }],
-            eqeqeq: 'off',
-            'import/no-absolute-path': 'off',
-            'require-await': 'warn',
-            'sort-imports': 'off',
-            'sort-keys-fix/sort-keys-fix': 'off',
-            'sort-vars': 'warn',
-            'space-infix-ops': 'error',
-            'vue/this-in-template': 'error',
-            'no-undef': 'off',
-            'no-unused-vars': 'off',
-            '@typescript-eslint/no-unused-vars': 'off',
-            'vue/no-reserved-component-names': 'off',
-            'vue/no-multiple-template-root': 'off',
+            'prettier/prettier': 'error',
+            'simple-import-sort/exports': 'error',
             'simple-import-sort/imports': [
                 'error',
                 {
@@ -64,9 +55,44 @@ export default [
                     ],
                 },
             ],
-            'simple-import-sort/exports': 'error',
-            'prettier/prettier': 'error',
+            'sort-keys-fix/sort-keys-fix': 'warn',
         },
-        ignores: ['node_modules/**'],
+    },
+    ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
+    {
+        files: ['**/*.json'],
+        plugins: {
+            json,
+            prettier: pluginPrettier,
+            'sort-keys-fix': pluginSortKeysFix,
+        },
+        rules: {
+            'jsonc/sort-keys': [
+                'error',
+                {
+                    order: [
+                        'name',
+                        'version',
+                        'private',
+                        'publishConfig',
+                        // ...
+                    ],
+                    pathPattern: '^$',
+                },
+                {
+                    order: { type: 'asc' },
+                    pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
+                },
+            ],
+            'prettier/prettier': 'error',
+            'sort-keys-fix/sort-keys-fix': [
+                'warn',
+                'asc',
+                {
+                    caseSensitive: false,
+                    natural: true,
+                },
+            ],
+        },
     },
 ];

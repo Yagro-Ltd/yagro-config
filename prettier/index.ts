@@ -1,13 +1,13 @@
 import type { Options } from 'prettier';
 
 const config: Options = {
-  semi: true,
-  trailingComma: 'es5',
-  printWidth: 100,
-  tabWidth: 2,
-  singleQuote: true,
   arrowParens: 'always',
+  printWidth: 100,
   proseWrap: 'preserve',
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
   vueIndentScriptAndStyle: true,
 };
 

@@ -1,13 +1,58 @@
-import * as tsParser from '@typescript-eslint/parser';
 import vueParser from 'vue-eslint-parser';
-declare const _default: {
+import json from '@eslint/json';
+import * as tsParser from '@typescript-eslint/parser';
+declare const _default: ({
+    plugins: {
+        readonly jsonc: import("eslint").ESLint.Plugin;
+    };
+    files?: undefined;
+    languageOptions?: undefined;
+    rules?: undefined;
+} | {
     files: string[];
     languageOptions: {
-        parser: typeof vueParser;
-        parserOptions: {
-            parser: typeof tsParser;
-            sourceType: string;
-        };
+        parser: typeof import("jsonc-eslint-parser");
+    };
+    rules: {
+        strict: "off";
+        "no-unused-expressions": "off";
+        "no-unused-vars": "off";
+    };
+    plugins?: undefined;
+} | {
+    rules: {
+        "jsonc/no-bigint-literals": "error";
+        "jsonc/no-binary-expression": "error";
+        "jsonc/no-binary-numeric-literals": "error";
+        "jsonc/no-dupe-keys": "error";
+        "jsonc/no-escape-sequence-in-identifier": "error";
+        "jsonc/no-floating-decimal": "error";
+        "jsonc/no-hexadecimal-numeric-literals": "error";
+        "jsonc/no-infinity": "error";
+        "jsonc/no-multi-str": "error";
+        "jsonc/no-nan": "error";
+        "jsonc/no-number-props": "error";
+        "jsonc/no-numeric-separators": "error";
+        "jsonc/no-octal-numeric-literals": "error";
+        "jsonc/no-octal": "error";
+        "jsonc/no-parenthesized": "error";
+        "jsonc/no-plus-sign": "error";
+        "jsonc/no-regexp-literals": "error";
+        "jsonc/no-sparse-arrays": "error";
+        "jsonc/no-template-literals": "error";
+        "jsonc/no-undefined-value": "error";
+        "jsonc/no-unicode-codepoint-escapes": "error";
+        "jsonc/no-useless-escape": "error";
+        "jsonc/quote-props": "error";
+        "jsonc/quotes": "error";
+        "jsonc/space-unary-ops": "error";
+        "jsonc/valid-json-number": "error";
+        "jsonc/vue-custom-block/no-parsing-error": "error";
+    };
+} | {
+    files: string[];
+    ignores: string[];
+    languageOptions: {
         globals: {
             ComputedRef: string;
             computed: string;
@@ -16,34 +61,16 @@ declare const _default: {
             onMounted: string;
             useNuxtApp: string;
         };
+        parser: typeof vueParser;
+        parserOptions: {
+            parser: typeof tsParser;
+            sourceType: string;
+        };
     };
     plugins: {
-        vue: {
-            meta: any;
-            configs: {
-                base: import("eslint").Linter.LegacyConfig;
-                "vue2-essential": import("eslint").Linter.LegacyConfig;
-                "vue2-strongly-recommended": import("eslint").Linter.LegacyConfig;
-                "vue2-recommended": import("eslint").Linter.LegacyConfig;
-                "vue3-essential": import("eslint").Linter.LegacyConfig;
-                "vue3-strongly-recommended": import("eslint").Linter.LegacyConfig;
-                "vue3-recommended": import("eslint").Linter.LegacyConfig;
-                "flat/base": import("eslint").Linter.FlatConfig[];
-                "flat/vue2-essential": import("eslint").Linter.FlatConfig[];
-                "flat/vue2-strongly-recommended": import("eslint").Linter.FlatConfig[];
-                "flat/vue2-recommended": import("eslint").Linter.FlatConfig[];
-                "flat/essential": import("eslint").Linter.FlatConfig[];
-                "flat/strongly-recommended": import("eslint").Linter.FlatConfig[];
-                "flat/recommended": import("eslint").Linter.FlatConfig[];
-                "no-layout-rules": import("eslint").Linter.LegacyConfig;
-            };
-            rules: Record<string, any>;
-            processors: {
-                ".vue": any;
-                vue: any;
-            };
-        };
+        json: typeof json;
         prettier: import("eslint").ESLint.Plugin;
+        'simple-import-sort': import("eslint").ESLint.Plugin;
         'sort-keys-fix': any;
         storybook: {
             configs: {
@@ -330,33 +357,70 @@ declare const _default: {
                 "use-storybook-testing-library": import("@typescript-eslint/utils/ts-eslint").RuleModule<"updateImports" | "dontUseTestingLibraryDirectly", [], import("eslint-plugin-storybook/dist/types").StorybookRuleMetaDocs, import("@typescript-eslint/utils/ts-eslint").RuleListener>;
             };
         };
-        'simple-import-sort': import("eslint").ESLint.Plugin;
+        vue: {
+            meta: any;
+            configs: {
+                base: import("eslint").Linter.LegacyConfig;
+                "vue2-essential": import("eslint").Linter.LegacyConfig;
+                "vue2-strongly-recommended": import("eslint").Linter.LegacyConfig;
+                "vue2-recommended": import("eslint").Linter.LegacyConfig;
+                "vue3-essential": import("eslint").Linter.LegacyConfig;
+                "vue3-strongly-recommended": import("eslint").Linter.LegacyConfig;
+                "vue3-recommended": import("eslint").Linter.LegacyConfig;
+                "flat/base": import("eslint").Linter.FlatConfig[];
+                "flat/vue2-essential": import("eslint").Linter.FlatConfig[];
+                "flat/vue2-strongly-recommended": import("eslint").Linter.FlatConfig[];
+                "flat/vue2-recommended": import("eslint").Linter.FlatConfig[];
+                "flat/essential": import("eslint").Linter.FlatConfig[];
+                "flat/strongly-recommended": import("eslint").Linter.FlatConfig[];
+                "flat/recommended": import("eslint").Linter.FlatConfig[];
+                "no-layout-rules": import("eslint").Linter.LegacyConfig;
+            };
+            rules: Record<string, any>;
+            processors: {
+                ".vue": any;
+                vue: any;
+            };
+        };
     };
     rules: {
-        'comma-dangle': string[];
-        'comma-spacing': (string | {
-            after: boolean;
-            before: boolean;
-        })[];
-        eqeqeq: string;
-        'import/no-absolute-path': string;
-        'require-await': string;
-        'sort-imports': string;
-        'sort-keys-fix/sort-keys-fix': string;
-        'sort-vars': string;
-        'space-infix-ops': string;
-        'vue/this-in-template': string;
-        'no-undef': string;
-        'no-unused-vars': string;
-        '@typescript-eslint/no-unused-vars': string;
-        'vue/no-reserved-component-names': string;
-        'vue/no-multiple-template-root': string;
+        'prettier/prettier': string;
+        'simple-import-sort/exports': string;
         'simple-import-sort/imports': (string | {
             groups: string[][];
         })[];
-        'simple-import-sort/exports': string;
-        'prettier/prettier': string;
+        'sort-keys-fix/sort-keys-fix': string;
+        'jsonc/sort-keys'?: undefined;
     };
-    ignores: string[];
-}[];
+} | {
+    files: string[];
+    plugins: {
+        json: typeof json;
+        prettier: import("eslint").ESLint.Plugin;
+        'sort-keys-fix': any;
+        'simple-import-sort'?: undefined;
+        storybook?: undefined;
+        vue?: undefined;
+    };
+    rules: {
+        'jsonc/sort-keys': (string | {
+            order: string[];
+            pathPattern: string;
+        } | {
+            order: {
+                type: string;
+            };
+            pathPattern: string;
+        })[];
+        'prettier/prettier': string;
+        'sort-keys-fix/sort-keys-fix': (string | {
+            caseSensitive: boolean;
+            natural: boolean;
+        })[];
+        'simple-import-sort/exports'?: undefined;
+        'simple-import-sort/imports'?: undefined;
+    };
+    ignores?: undefined;
+    languageOptions?: undefined;
+})[];
 export default _default;
