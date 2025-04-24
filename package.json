@@ -47,8 +47,7 @@
   },
   "dependencies": {
     "install": "^0.13.0",
-    "jsonc": "^2.0.0",
-    "npm": "^11.3.0"
+    "jsonc": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/json": "^0.12.0",

@@ -9,6 +9,7 @@ import json from '@eslint/json';
 import * as tsParser from '@typescript-eslint/parser';
 export default [
     {
+        ...pluginVue.configs['flat/recommended+typescript+setup'],
         files: ['**/*.{ts,vue}'],
         ignores: ['node_modules/**'],
         languageOptions: {
@@ -43,12 +44,21 @@ export default [
                     groups: [
                         ['^node:', '^\\w'],
                         [''],
+                        ['^@/components'],
+                        [''],
+                        ['^@/composables'],
+                        [''],
+                        ['^@/stores'],
+                        [''],
                         ['^@/'],
                         [''],
                         ['^~/'],
                         ['^~~/'],
                         [''],
+                        ['^#ui/'],
+                        [''],
                         ['^#/'],
+                        [''],
                         ['^\\u0000', '^\\.', '^\\.\\./'],
                         [''],
                         ['^.+\\.d\\.ts$'],
@@ -56,6 +66,25 @@ export default [
                 },
             ],
             'sort-keys-fix/sort-keys-fix': 'warn',
+            'vue/attributes-order': [
+                'error',
+                {
+                    alphabetical: false,
+                    order: [
+                        'CONDITIONALS',
+                        'GLOBAL',
+                        'UNIQUE',
+                        'DEFINITION',
+                        'LIST_RENDERING',
+                        'RENDER_MODIFIERS',
+                        'TWO_WAY_BINDING',
+                        'OTHER_DIRECTIVES',
+                        'CONTENT',
+                        'OTHER_ATTR',
+                        'EVENTS',
+                    ],
+                },
+            ],
         },
     },
     ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
@@ -70,13 +99,7 @@ export default [
             'jsonc/sort-keys': [
                 'error',
                 {
-                    order: [
-                        'name',
-                        'version',
-                        'private',
-                        'publishConfig',
-                        // ...
-                    ],
+                    order: ['name', 'version', 'description', 'license'],
                     pathPattern: '^$',
                 },
                 {
