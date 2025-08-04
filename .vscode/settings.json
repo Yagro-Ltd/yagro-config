@@ -1,9 +1,11 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit"
   },
   "eslint.ignoreUntitled": true,
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": ["javascript", "typescript", "vue"],
   "eslint.format.enable": true,
-  "eslint.run": "onSave"
+  "eslint.run": "onSave",
+  "editor.formatOnSave": false
 }

@@ -1,5 +1,4 @@
 import eslintPluginJsonc from 'eslint-plugin-jsonc';
-import pluginPrettier from 'eslint-plugin-prettier';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 import pluginStorybook from 'eslint-plugin-storybook';
@@ -31,14 +30,12 @@ export default [
     },
     plugins: {
       json,
-      prettier: pluginPrettier,
       'simple-import-sort': pluginSimpleImportSort,
       'sort-keys-fix': pluginSortKeysFix,
       storybook: pluginStorybook,
       vue: pluginVue,
     },
     rules: {
-      'prettier/prettier': 'error',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
         'error',
@@ -96,7 +93,6 @@ export default [
     files: ['**/*.json'],
     plugins: {
       json,
-      prettier: pluginPrettier,
       'sort-keys-fix': pluginSortKeysFix,
     },
     rules: {
@@ -111,7 +107,6 @@ export default [
           pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
         },
       ],
-      'prettier/prettier': 'error',
       'sort-keys-fix/sort-keys-fix': [
         'warn',
         'asc',
