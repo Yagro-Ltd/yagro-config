@@ -1,11 +1,13 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "postinstall": "node scripts/postinstall.js",
+  "bin": {
+    "yagro-init": "./scripts/postinstall.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
   },
