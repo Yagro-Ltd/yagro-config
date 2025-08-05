@@ -6,7 +6,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "bin": {
-    "yagro-init": "./scripts/postinstall.js"
+    "yagro-init": "./scripts/yagro-init.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
