@@ -13,6 +13,10 @@ jobs:
       contents: read
       packages: write
 
+    env:
+      FONT_AWESOME_PRO_TOKEN: ${{ secrets.FONT_AWESOME_PRO_TOKEN }}
+      YAGRO_LTD_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -24,9 +28,6 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        env:
-          FONT_AWESOME_PRO_TOKEN: ${{ secrets.FONT_AWESOME_PRO_TOKEN }}
-          YAGRO_LTD_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
         with:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
