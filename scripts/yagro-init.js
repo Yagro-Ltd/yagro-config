@@ -66,7 +66,21 @@ const configPkg = JSON.parse(readFileSync(new URL('../package.json', import.meta
 const runtimeDeps = configPkg.dependencies || {};
 const devDeps = configPkg.devDependencies || {};
 
-// Step 3: Build install commands
+// Step 3: Set engines field in target package.json
+const targetPkgPath = path.resolve(root, 'package.json');
+if (existsSync(targetPkgPath)) {
+  const targetPkg = JSON.parse(readFileSync(targetPkgPath, 'utf8'));
+  targetPkg.engines = {
+    node: ">=22 <23",
+    npm: ">=10 <11",
+    yarn: ">=4 <5"
+  };
+  writeFileSync(targetPkgPath, JSON.stringify(targetPkg, null, 2));
+  console.log('✅ Set engines field in package.json');
+}
+
+
+// Step 4: Build install commands
 const toInstallRuntime = Object.entries(runtimeDeps).map(([name, version]) => `${name}@${version}`);
 const toInstallDev = Object.entries(devDeps).map(([name, version]) => `${name}@${version}`);
 
