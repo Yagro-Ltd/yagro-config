@@ -17,6 +17,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Enable Corepack and prepare Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@4.9.2 --activate
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
