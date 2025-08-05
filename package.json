@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "@unocss/nuxt": "^0.61.0",
-    "@vitejs/plugin-vue": "4.5.2",
+    "@vitejs/plugin-vue": "^6.0.1",
     "@vueform/multiselect": "^2.3.1",
     "ag-grid-community": "^34.0.1",
     "ag-grid-enterprise": "^34.0.1",
