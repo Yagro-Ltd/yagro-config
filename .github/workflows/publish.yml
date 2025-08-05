@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         env:
           FONT_AWESOME_PRO_TOKEN: ${{ secrets.FONT_AWESOME_PRO_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+          YAGRO_LTD_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
         with:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
