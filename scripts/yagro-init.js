@@ -60,21 +60,26 @@ if (existsSync(sourceYarnrc)) {
 mergeJson('settings.json');
 mergeJson('extensions.json');
 
-// Step 2: Read peer dependencies from package.json
+// Step 2: Read dependencies and devDependencies from package.json
 const configPkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 
-const deps = {
-  ...configPkg.peerDependencies,
-};
+const runtimeDeps = configPkg.dependencies || {};
+const devDeps = configPkg.devDependencies || {};
 
-// Step 3: Build install command
-const toInstall = Object.entries(deps).map(([name, version]) => `${name}@${version}`);
+// Step 3: Build install commands
+const toInstallRuntime = Object.entries(runtimeDeps).map(([name, version]) => `${name}@${version}`);
+const toInstallDev = Object.entries(devDeps).map(([name, version]) => `${name}@${version}`);
 
-if (toInstall.length > 0) {
-  console.log('Installing required peer dependencies...');
-  execSync(`yarn add -D ${toInstall.join(' ')}`, { stdio: 'inherit' });
-} else {
-  console.log('No peer dependencies to install.');
+// Install runtime dependencies
+if (toInstallRuntime.length > 0) {
+  console.log('Installing runtime dependencies...');
+  execSync(`yarn add ${toInstallRuntime.join(' ')}`, { stdio: 'inherit' });
+}
+
+// Install dev dependencies
+if (toInstallDev.length > 0) {
+  console.log('Installing dev dependencies...');
+  execSync(`yarn add -D ${toInstallDev.join(' ')}`, { stdio: 'inherit' });
 }
 
 console.log('Postinstall completed.');
