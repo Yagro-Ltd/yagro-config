@@ -11,7 +11,7 @@ const root = process.cwd();
 
 const log = console.log;
 
-const require = createRequire(import.meta.url);
+const require = createRequire(__filename);
 
 const resolvePath = (...segments: string[]) =>
   path.resolve(__dirname, '..', ...segments);
