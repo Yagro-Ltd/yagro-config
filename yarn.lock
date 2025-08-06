@@ -2460,7 +2460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.18.1, @nuxt/kit@npm:^3.12.2, @nuxt/kit@npm:^3.12.4, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.17.2, @nuxt/kit@npm:^3.17.5, @nuxt/kit@npm:^3.17.6, @nuxt/kit@npm:^3.17.7, @nuxt/kit@npm:^3.18.0, @nuxt/kit@npm:^3.9.0":
+"@nuxt/kit@npm:3.18.1, @nuxt/kit@npm:^3.12.4, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.17.2, @nuxt/kit@npm:^3.17.5, @nuxt/kit@npm:^3.17.6, @nuxt/kit@npm:^3.17.7, @nuxt/kit@npm:^3.18.0, @nuxt/kit@npm:^3.9.0":
   version: 3.18.1
   resolution: "@nuxt/kit@npm:3.18.1"
   dependencies:
@@ -3330,19 +3330,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pinia-plugin-persistedstate/nuxt@npm:^1.2.0":
-  version: 1.2.1
-  resolution: "@pinia-plugin-persistedstate/nuxt@npm:1.2.1"
-  dependencies:
-    "@nuxt/kit": "npm:^3.12.2"
-    defu: "npm:^6.1.4"
-    pinia-plugin-persistedstate: "npm:>=3.2.1"
-  peerDependencies:
-    "@pinia/nuxt": ^0.5.0
-  checksum: 10c0/bd2f33777ff82d842ee28f74fbe5d6a8d4ba13305fa75f953e0ac3f0b914c9a5c4486a39e971537b63cfd21dfb642a2424ea8b63485e1503911599d0bef3624c
-  languageName: node
-  linkType: hard
-
 "@pinia/nuxt@npm:^0.11.2":
   version: 0.11.2
   resolution: "@pinia/nuxt@npm:0.11.2"
@@ -3388,6 +3375,13 @@ __metadata:
   version: 1.0.0-next.29
   resolution: "@polka/url@npm:1.0.0-next.29"
   checksum: 10c0/0d58e081844095cb029d3c19a659bfefd09d5d51a2f791bc61eba7ea826f13d6ee204a8a448c2f5a855c17df07b37517373ff916dd05801063c0568ae9937684
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.11.8":
+  version: 2.11.8
+  resolution: "@popperjs/core@npm:2.11.8"
+  checksum: 10c0/4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
   languageName: node
   linkType: hard
 
@@ -4493,7 +4487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.39.0, @typescript-eslint/utils@npm:^8.24.0, @typescript-eslint/utils@npm:^8.35.1, @typescript-eslint/utils@npm:^8.38.0, @typescript-eslint/utils@npm:^8.8.1":
+"@typescript-eslint/utils@npm:8.39.0, @typescript-eslint/utils@npm:^8.24.0, @typescript-eslint/utils@npm:^8.35.1, @typescript-eslint/utils@npm:^8.38.0, @typescript-eslint/utils@npm:^8.39.0, @typescript-eslint/utils@npm:^8.8.1":
   version: 8.39.0
   resolution: "@typescript-eslint/utils@npm:8.39.0"
   dependencies:
@@ -5571,7 +5565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.5.18, @vue/compiler-sfc@npm:^3.2.0, @vue/compiler-sfc@npm:^3.5.13, @vue/compiler-sfc@npm:^3.5.17":
+"@vue/compiler-sfc@npm:3.5.18, @vue/compiler-sfc@npm:^3.2.0, @vue/compiler-sfc@npm:^3.5.13, @vue/compiler-sfc@npm:^3.5.17, @vue/compiler-sfc@npm:^3.5.18":
   version: 3.5.18
   resolution: "@vue/compiler-sfc@npm:3.5.18"
   dependencies:
@@ -6107,9 +6101,9 @@ __metadata:
     "@nuxt/schema": "npm:^3.17.6"
     "@nuxt/test-utils": "npm:^3.13.1"
     "@nuxtjs/i18n": "npm:^9.5.5"
-    "@pinia-plugin-persistedstate/nuxt": "npm:^1.2.0"
     "@pinia/nuxt": "npm:^0.11.2"
     "@pinia/testing": "npm:^1.0.2"
+    "@popperjs/core": "npm:^2.11.8"
     "@sentry/browser": "npm:^9.38.0"
     "@storybook/addon-a11y": "npm:^9.0.1"
     "@storybook/addon-docs": "npm:^9.0.1"
@@ -6122,6 +6116,7 @@ __metadata:
     "@types/node": "npm:^24.2.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.36.0"
     "@typescript-eslint/parser": "npm:^8.36.0"
+    "@typescript-eslint/utils": "npm:^8.39.0"
     "@unocss/eslint-plugin": "npm:^65.4.3"
     "@unocss/nuxt": "npm:^0.61.0"
     "@unocss/preset-icons": "npm:^65.4.3"
@@ -6129,6 +6124,7 @@ __metadata:
     "@villus/batch": "npm:^3.5.2"
     "@vitejs/plugin-vue": "npm:^6.0.1"
     "@vitest/eslint-plugin": "npm:1.1.25"
+    "@vue/compiler-sfc": "npm:^3.5.18"
     "@vue/eslint-config-typescript": "npm:^14.3.0"
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.7.0"
@@ -6175,6 +6171,7 @@ __metadata:
     nuxt: "npm:^3.17.6"
     ora: "npm:5.4.1"
     pinia: "npm:^3.0.3"
+    pinia-plugin-persistedstate: "npm:^4.4.1"
     postcss: "npm:^8.5.5"
     postcss-custom-media: "npm:^9.1.2"
     postcss-inline-svg: "npm:^6.0.0"
@@ -14209,7 +14206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia-plugin-persistedstate@npm:>=3.2.1":
+"pinia-plugin-persistedstate@npm:^4.4.1":
   version: 4.4.1
   resolution: "pinia-plugin-persistedstate@npm:4.4.1"
   dependencies:
