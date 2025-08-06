@@ -7,7 +7,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "bin": {
-    "yagro-init": "./dist/scripts/yagro-init.js"
+    "yagro-init": "./dist/scripts/yagro-init.cjs"
   },
   "scripts": {
     "build:cli": "yarn tsup",
