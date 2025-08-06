@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { execSync } from 'node:child_process';
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import path from 'node:path';
+import { execSync } from 'child_process';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import path from 'path';
 import chalk from 'chalk';
 import ora from 'ora';
 
