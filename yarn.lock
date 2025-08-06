@@ -6208,7 +6208,7 @@ __metadata:
     webpack: "npm:^5.101.0"
     zod: "npm:^3.25.76"
   bin:
-    yagro-init: ./dist/scripts/yagro-init.js
+    yagro-init: ./dist/scripts/yagro-init.cjs
   languageName: unknown
   linkType: soft
 
