@@ -6,5 +6,6 @@ export default defineConfig({
   outDir: 'dist/scripts',
   target: 'node16',
   dts: false,
-  clean: true
+  clean: true,
+  outExtension: () => ({ js: '.cjs' }),
 });
