@@ -11,7 +11,7 @@ const root = process.cwd();
 const log = console.log;
 
 const resolvePath = (...segments: string[]) =>
-  path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', ...segments);
+  path.resolve(__dirname, '..', ...segments);
 
 // Step 1: Merge VSCode settings
 const mergeVscodeSettings = () => {

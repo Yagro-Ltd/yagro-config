@@ -10,7 +10,9 @@
     "yagro-init": "./dist/scripts/yagro-init.js"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build:cli": "tsc -p tsconfig.build.cli.json",
+    "build:configs": "tsc -p tsconfig.build.configs.json",
+    "build": "yarn build:cli && yarn build:configs"
   },
   "author": "Marc Horne",
   "license": "ISC",
