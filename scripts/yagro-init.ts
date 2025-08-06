@@ -3,12 +3,15 @@
 import { execSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'module';
 import chalk from 'chalk';
 import ora from 'ora';
 
 const root = process.cwd();
 
 const log = console.log;
+
+const require = createRequire(import.meta.url);
 
 const resolvePath = (...segments: string[]) =>
   path.resolve(__dirname, '..', ...segments);
@@ -93,7 +96,7 @@ const updateEngines = () => {
 
 // Step 4: Install runtime + dev dependencies from config package
 const installPeerDeps = () => {
-  const configPkg = JSON.parse(readFileSync(resolvePath('package.json'), 'utf8'));
+  const configPkg = require('../../package.json');
   const runtimeDeps = configPkg.dependencies || {};
   const devDeps = configPkg.devDependencies || {};
 
