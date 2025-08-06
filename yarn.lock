@@ -4119,6 +4119,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cli-progress@npm:^3.11.6":
+  version: 3.11.6
+  resolution: "@types/cli-progress@npm:3.11.6"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/d9a2d60b8fc6ccef73368fa20a23d5b16506808a81ec65f7e8eedf58d236ebaf2ab46578936c000c8e39dde825cb48a3cf9195c8b410177efd5388bcf9d07370
+  languageName: node
+  linkType: hard
+
 "@types/cookie@npm:^0.6.0":
   version: 0.6.0
   resolution: "@types/cookie@npm:0.6.0"
@@ -4243,7 +4252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^24.2.0":
   version: 24.2.0
   resolution: "@types/node@npm:24.2.0"
   dependencies:
@@ -4258,15 +4267,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.21.0"
   checksum: 10c0/c6738131f1698258a5ac1e0185e4fc56977f7f566cd0ee11167f93f2339478470257bd82c5e1908a936a204e0ad7996d741356a1a07c04997a236161ea23a874
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^22.10.7":
-  version: 22.17.0
-  resolution: "@types/node@npm:22.17.0"
-  dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/e1c603b660d3de3243dfc02ded5d40623ff3f36315ffbdd8cdc81bc2c5a8da172035879d437b72e9fa61ca01827f28e9c2b0c32898f411a8e9ba0a5efac0b4ca
   languageName: node
   linkType: hard
 
@@ -6116,9 +6116,10 @@ __metadata:
     "@storybook/vue3-vite": "npm:^9.0.1"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/vue": "npm:^7.0.0"
+    "@types/cli-progress": "npm:^3.11.6"
     "@types/jsdom": "npm:^21.1.7"
     "@types/leaflet": "npm:^1.9.20"
-    "@types/node": "npm:^22.10.7"
+    "@types/node": "npm:^24.2.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.36.0"
     "@typescript-eslint/parser": "npm:^8.36.0"
     "@unocss/eslint-plugin": "npm:^65.4.3"
