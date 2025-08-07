@@ -10,7 +10,7 @@ export const copyYarnrc = () => {
   try {
     const sourceYarnrc = resolvePath('.yarnrc.yml');
     const targetYarnrc = path.resolve(root, '.yarnrc.yml');
-    
+
     if (existsSync(sourceYarnrc)) {
       copyFileSync(sourceYarnrc, targetYarnrc);
     }
@@ -50,21 +50,22 @@ export const mergeVscodeSettings = () => {
       const targetPath = path.join(targetDir, filename);
 
       if (!existsSync(sourcePath)) return;
-
       if (!existsSync(targetDir)) mkdirSync(targetDir, { recursive: true });
 
       const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
       const target = existsSync(targetPath) ? JSON.parse(readFileSync(targetPath, 'utf8')) : {};
 
-      const merged = {
-        ...target,
-        ...source,
-        ...(filename === 'extensions.json' && {
-          recommendations: Array.from(
-            new Set([...(target.recommendations || []), ...(source.recommendations || [])])
-          ),
-        }),
-      };
+      const merged = { ...target };
+
+      for (const [key, value] of Object.entries(source)) {
+        if (filename === 'extensions.json' && key === 'recommendations' && Array.isArray(value)) {
+          merged.recommendations = Array.from(
+            new Set([...(target.recommendations || []), ...value])
+          );
+        } else if (!(key in target)) {
+          merged[key] = value;
+        }
+      }
 
       writeFileSync(targetPath, JSON.stringify(merged, null, 2));
     };

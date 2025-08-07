@@ -7,5 +7,5 @@
   "eslint.validate": ["javascript", "typescript", "vue"],
   "eslint.format.enable": true,
   "eslint.run": "onSave",
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
