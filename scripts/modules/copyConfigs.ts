@@ -43,10 +43,21 @@ export const copyNvmrc = () => {
 export const mergeVscodeSettings = () => {
   const spinner = ora('Merging VSCode settings').start();
 
+  // Resolve the .vscode directory relative to the current working directory
+  const resolveVscodeDir = () => {
+    let dir = process.cwd();
+    while (!existsSync(path.join(dir, '.vscode'))) {
+      const parent = path.dirname(dir);
+      if (parent === dir) break;
+      dir = parent;
+    }
+    return path.join(dir, '.vscode');
+  };
+
   try {
     const mergeJson = (filename: string) => {
       const sourcePath = resolvePath('.vscode', filename);
-      const targetDir = path.resolve(root, '.vscode');
+      const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
 
       if (!existsSync(sourcePath)) return;
