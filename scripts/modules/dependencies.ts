@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 
@@ -11,7 +12,7 @@ export const installDeps = () => {
   try {
     const root = process.cwd();
     const targetPkgPath = path.resolve(root, 'package.json');
-    const sourcePkgPath = path.resolve(__dirname, '../../package.json');
+    const sourcePkgPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../package.json');
 
     const configPkg = JSON.parse(readFileSync(sourcePkgPath, 'utf8'));
     const targetPkg = JSON.parse(readFileSync(targetPkgPath, 'utf8'));
