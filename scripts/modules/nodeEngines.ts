@@ -12,32 +12,6 @@ const requiredNode = '>=22 <23';
 const requiredNpm = '>=10 <11';
 const requiredYarn = '>=4 <5';
 
-export const checkAndInstallNvm = () => {
-  try {
-    execSync('command -v nvm', { stdio: 'ignore' });
-  } catch {
-    console.log(chalk.yellow('🚧 nvm not found. Installing...'));
-    
-    execSync('curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash', {
-      stdio: 'inherit',
-      shell: '/bin/bash',
-    });
-
-    const nvmDir = process.env.HOME + '/.nvm';
-    const nvmScript = `${nvmDir}/nvm.sh`;
-
-    if (existsSync(nvmScript)) {
-      execSync(`. ${nvmScript} && nvm install 22 && nvm use 22`, {
-        stdio: 'inherit',
-        shell: '/bin/bash',
-      });
-    } else {
-      console.error('❌ Failed to locate nvm after installation.');
-      process.exit(1);
-    }
-  }
-}
-
 export const checkEngines = () => {
   const currentNode = process.version;
   const currentNpm = execSync('npm -v').toString().trim();

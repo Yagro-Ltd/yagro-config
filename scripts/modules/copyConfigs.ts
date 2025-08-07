@@ -22,6 +22,24 @@ export const copyYarnrc = () => {
   }
 };
 
+export const copyNvmrc = () => {
+  const spinner = ora('Copying .nvmrc').start();
+
+  try {
+    const sourceNvmrc = resolvePath('.nvmrc.yml');
+    const targetNvmrc = path.resolve(root, '.nvmrc.yml');
+
+    if (existsSync(sourceNvmrc)) {
+      copyFileSync(sourceNvmrc, targetNvmrc);
+    }
+
+    spinner.succeed('Copied .nvmrc.yml');
+  } catch (e) {
+    spinner.fail('Failed to copy .nvmrc.yml');
+    throw e;
+  }
+};
+
 export const mergeVscodeSettings = () => {
   const spinner = ora('Merging VSCode settings').start();
 
