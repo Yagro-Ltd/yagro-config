@@ -71,17 +71,29 @@ export const mergeVscodeSettings = () => {
       const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
       const target = existsSync(targetPath) ? JSON.parse(readFileSync(targetPath, 'utf8')) : {};
 
-      const merged = { ...target };
-
-      for (const [key, value] of Object.entries(source)) {
-        if (filename === 'extensions.json' && key === 'recommendations' && Array.isArray(value)) {
-          merged.recommendations = Array.from(
-            new Set([...(target.recommendations || []), ...value])
-          );
-        } else if (!(key in target)) {
-          merged[key] = value;
+      const deepMerge = (a: any, b: any): any => {
+        if (Array.isArray(a) && Array.isArray(b)) {
+          return Array.from(new Set([...a, ...b]));
         }
-      }
+        if (a && b && typeof a === 'object' && typeof b === 'object') {
+          const result: any = { ...a };
+          for (const key of Object.keys(b)) {
+            result[key] = deepMerge(a[key], b[key]);
+          }
+          return result;
+        }
+        return b;
+      };
+
+      const merged =
+        filename === 'extensions.json'
+          ? {
+              ...target,
+              recommendations: Array.from(
+                new Set([...(target.recommendations || []), ...(source.recommendations || [])])
+              ),
+            }
+          : deepMerge(target, source);
 
       writeFileSync(targetPath, JSON.stringify(merged, null, 2));
     };
