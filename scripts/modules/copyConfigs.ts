@@ -43,20 +43,27 @@ export const copyNvmrc = () => {
 export const mergeVscodeSettings = () => {
   const spinner = ora('Merging VSCode settings').start();
 
-  // Resolve the .vscode directory relative to the current working directory
   const resolveVscodeDir = () => {
     let dir = process.cwd();
+    console.log(`🔍 Starting search for .vscode from: ${dir}`);
 
     while (true) {
       const candidate = path.join(dir, '.vscode');
-      if (existsSync(candidate)) return candidate;
+      console.log(`🔍 Checking: ${candidate}`);
+
+      if (existsSync(candidate)) {
+        console.log(`✅ Found existing .vscode directory at: ${candidate}`);
+        return candidate;
+      }
 
       const parent = path.dirname(dir);
       if (parent === dir) break;
       dir = parent;
     }
 
-    return path.join(process.cwd(), '.vscode');
+    const fallback = path.join(process.cwd(), '.vscode');
+    console.log(`⚠️ No .vscode directory found up the tree, falling back to: ${fallback}`);
+    return fallback;
   };
 
   try {
@@ -65,11 +72,24 @@ export const mergeVscodeSettings = () => {
       const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
 
-      if (!existsSync(sourcePath)) return;
-      if (!existsSync(targetDir)) mkdirSync(targetDir, { recursive: true });
+      console.log(`📄 Source path: ${sourcePath}`);
+      console.log(`📄 Target path: ${targetPath}`);
+
+      if (!existsSync(sourcePath)) {
+        console.log(`❌ Source file does not exist: ${sourcePath}`);
+        return;
+      }
+
+      if (!existsSync(targetDir)) {
+        console.log(`📁 Creating missing target directory: ${targetDir}`);
+        mkdirSync(targetDir, { recursive: true });
+      }
 
       const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
       const target = existsSync(targetPath) ? JSON.parse(readFileSync(targetPath, 'utf8')) : {};
+
+      console.log(`📦 Source JSON (${filename}):`, JSON.stringify(source, null, 2));
+      console.log(`📦 Target JSON (${filename}):`, JSON.stringify(target, null, 2));
 
       const deepMerge = (a: any, b: any): any => {
         if (Array.isArray(a) && Array.isArray(b)) {
@@ -95,7 +115,10 @@ export const mergeVscodeSettings = () => {
             }
           : deepMerge(target, source);
 
+      console.log(`🧩 Merged result (${filename}):`, JSON.stringify(merged, null, 2));
+
       writeFileSync(targetPath, JSON.stringify(merged, null, 2));
+      console.log(`💾 Wrote merged ${filename} to ${targetPath}`);
     };
 
     mergeJson('settings.json');
@@ -104,6 +127,7 @@ export const mergeVscodeSettings = () => {
     spinner.succeed('Merged .vscode settings and extensions');
   } catch (e) {
     spinner.fail('Failed to merge VSCode settings');
+    console.error(e);
     throw e;
   }
 };
