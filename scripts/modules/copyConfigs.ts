@@ -1,5 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { root, resolvePath } from './utils';
 
 import ora from 'ora';
@@ -68,7 +70,7 @@ export const mergeVscodeSettings = () => {
 
   try {
     const mergeJson = (filename: string) => {
-      const sourcePath = path.resolve(__dirname, '..', '.vscode', filename);
+      const sourcePath = path.resolve(path.dirname(fileURLToPath(import.meta.url), '..', '.vscode', filename);
       const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
 
