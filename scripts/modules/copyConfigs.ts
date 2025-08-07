@@ -68,7 +68,7 @@ export const mergeVscodeSettings = () => {
 
   try {
     const mergeJson = (filename: string) => {
-      const sourcePath = resolvePath('.vscode', filename);
+      const sourcePath = path.resolve(__dirname, '..', '.vscode', filename);
       const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
 
