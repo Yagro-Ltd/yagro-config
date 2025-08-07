@@ -8,9 +8,9 @@ import ora from 'ora';
 
 const root = process.cwd();
 
-const requiredNode = '>=22 <23';
-const requiredNpm = '>=10 <11';
-const requiredYarn = '>=4 <5';
+const requiredNode = '20.11.0';
+const requiredNpm = '10.2.4';
+const requiredYarn = '4.9.2';
 
 export const checkEngines = () => {
   const currentNode = process.version;
