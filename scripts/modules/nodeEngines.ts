@@ -35,8 +35,8 @@ export const checkEngines = () => {
     console.log(chalk.red('❌ Engine version mismatch:'));
     errors.forEach(e => console.log(chalk.red(`  - ${e}`)));
     console.log(chalk.blue('💡 You can fix this by running:'));
-    console.log(chalk.cyan(`  nvm install 22 && nvm use 22`));
-    console.log(chalk.cyan(`  corepack enable && corepack prepare yarn@4.1.1 --activate`));
+    console.log(chalk.cyan(`  nvm install ${requiredNode} && nvm use ${requiredNode}`));
+    console.log(chalk.cyan(`  corepack enable && corepack prepare yarn@${requiredYarn} --activate`));
     process.exit(1);
   }
 
@@ -52,9 +52,9 @@ export const updateEnginesInPackage = () => {
       const pkg = JSON.parse(readFileSync(targetPkgPath, 'utf8'));
 
       pkg.engines = {
-        node: '>=22 <23',
-        npm: '>=10 <11',
-        yarn: '>=4 <5',
+        node: requiredNode,
+        npm: requiredNpm,
+        yarn: requiredYarn,
       };
 
       writeFileSync(targetPkgPath, JSON.stringify(pkg, null, 2));
