@@ -1,20 +1,20 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "bin": {
-    "yagro-init": "./dist/scripts/yagro-init.cjs"
+    "yagro-init": "./scripts/yagro-init.ts"
   },
   "scripts": {
     "build:cli": "yarn tsup",
     "build:configs": "tsc -p tsconfig.build.configs.json",
     "build": "yarn build:cli && yarn build:configs"
   },
-  "author": "Marc Horne",
+  "author": "Yagro Ltd.",
   "license": "ISC",
   "dependencies": {
     "@csstools/postcss-global-data": "^1.0.3",
