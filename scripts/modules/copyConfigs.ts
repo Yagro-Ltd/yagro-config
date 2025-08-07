@@ -46,12 +46,17 @@ export const mergeVscodeSettings = () => {
   // Resolve the .vscode directory relative to the current working directory
   const resolveVscodeDir = () => {
     let dir = process.cwd();
-    while (!existsSync(path.join(dir, '.vscode'))) {
+
+    while (true) {
+      const candidate = path.join(dir, '.vscode');
+      if (existsSync(candidate)) return candidate;
+
       const parent = path.dirname(dir);
       if (parent === dir) break;
       dir = parent;
     }
-    return path.join(dir, '.vscode');
+
+    return path.join(process.cwd(), '.vscode');
   };
 
   try {
