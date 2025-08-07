@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.49",
+  "version": "0.1.50",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -159,7 +159,7 @@
   },
   "engines": {
     "node": "20.19.0",
-    "npm": "10.2.4",
+    "npm": "10.8.2",
     "yarn": "4.9.2"
   }
 }

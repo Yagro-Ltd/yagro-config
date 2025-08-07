@@ -9,7 +9,7 @@ import ora from 'ora';
 const root = process.cwd();
 
 const requiredNode = '20.19.0';
-const requiredNpm = '10.2.4';
+const requiredNpm = '10.8.2';
 const requiredYarn = '4.9.2';
 
 export const checkEngines = () => {
