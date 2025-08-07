@@ -8,7 +8,7 @@ import ora from 'ora';
 
 const root = process.cwd();
 
-const requiredNode = '20.11.0';
+const requiredNode = '20.19.0';
 const requiredNpm = '10.2.4';
 const requiredYarn = '4.9.2';
 

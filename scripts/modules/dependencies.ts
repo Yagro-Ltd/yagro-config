@@ -34,7 +34,7 @@ export const installDeps = () => {
     syncSection('devDependencies');
 
     writeFileSync(targetPkgPath, JSON.stringify(targetPkg, null, 2));
-    spinner.succeed('✅ Synced package.json dependencies');
+    spinner.succeed('Synced package.json dependencies');
 
     execSync('yarn install', { stdio: 'inherit' });
   } catch (err) {

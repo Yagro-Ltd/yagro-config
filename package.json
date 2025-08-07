@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.47",
+  "version": "0.1.48",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -10,9 +10,7 @@
     "yagro-init": "./scripts/yagro-init.ts"
   },
   "scripts": {
-    "build:cli": "yarn tsup",
-    "build:configs": "tsc -p tsconfig.build.configs.json",
-    "build": "yarn build:cli && yarn build:configs"
+    "build": "tsc -p tsconfig.build.json"
   },
   "author": "Yagro Ltd.",
   "license": "ISC",
@@ -134,7 +132,6 @@
     "msw": "^2.10.3",
     "npm-run-all2": "^7.0.2",
     "storybook": "^9.0.1",
-    "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-vue-devtools": "^7.7.6",
@@ -161,7 +158,7 @@
     }
   },
   "engines": {
-    "node": "20.11.0",
+    "node": "20.19.0",
     "npm": "10.2.4",
     "yarn": "4.9.2"
   }
