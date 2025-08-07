@@ -23,8 +23,18 @@ export const checkAndInstallNvm = () => {
       shell: '/bin/bash',
     });
 
-    console.log(chalk.green('✅ nvm installed. Please restart your terminal and re-run the command.'));
-    process.exit(1);
+    const nvmDir = process.env.HOME + '/.nvm';
+    const nvmScript = `${nvmDir}/nvm.sh`;
+
+    if (existsSync(nvmScript)) {
+      execSync(`. ${nvmScript} && nvm install 22 && nvm use 22`, {
+        stdio: 'inherit',
+        shell: '/bin/bash',
+      });
+    } else {
+      console.error('❌ Failed to locate nvm after installation.');
+      process.exit(1);
+    }
   }
 }
 
