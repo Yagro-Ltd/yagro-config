@@ -71,7 +71,8 @@ export const mergeVscodeSettings = () => {
   try {
     const mergeJson = (filename: string) => {
       const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-      const sourcePath = path.resolve(scriptDir, '..', '..', filename);
+      const packageRoot = path.resolve(scriptDir, '..', '..');
+      const sourcePath = path.resolve(packageRoot, '.vscode', filename);
       const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
 
@@ -124,8 +125,8 @@ export const mergeVscodeSettings = () => {
       console.log(`💾 Wrote merged ${filename} to ${targetPath}`);
     };
 
-    mergeJson('.vscode/settings.json');
-    mergeJson('.vscode/extensions.json');
+    mergeJson('settings.json');
+    mergeJson('extensions.json');
 
     spinner.succeed('Merged .vscode settings and extensions');
   } catch (e) {
