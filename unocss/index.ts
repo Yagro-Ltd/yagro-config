@@ -23,7 +23,7 @@ export default defineConfig({
         font-weight: 400;
         line-height: 1.5;
         background-color: ${theme.colors?.background};
-        color: ${theme.colors?.text['DEFAULT']};
+        color: ${typeof theme.colors?.text === 'object' ? theme.colors.text.DEFAULT : theme.colors?.text};
         display: flex;
         flex-direction: column;
       }
@@ -97,12 +97,12 @@ export default defineConfig({
       }
 
       ::selection {
-        background-color: ${theme.colors?.brand['DEFAULT']};
+        background-color: ${typeof theme.colors?.brand === 'object' ? theme.colors.brand.DEFAULT : theme.colors?.brand};
         color: #ffffff;
       }
 
       ::-webkit-selection {
-        background-color: ${theme.colors?.brand['DEFAULT']};
+        background-color: ${typeof theme.colors?.brand === 'object' ? theme.colors.brand.DEFAULT : theme.colors?.brand};
         color: #ffffff;
       }
 
@@ -112,11 +112,11 @@ export default defineConfig({
       }
 
       ::-webkit-scrollbar-track {
-        background-color: ${theme.colors?.gray['DEFAULT']};
+        background-color: ${typeof theme.colors?.gray === 'object' ? theme.colors.gray.DEFAULT : theme.colors?.gray};
       }
 
       ::-webkit-scrollbar-thumb {
-        background-color: ${theme.colors?.brand['DEFAULT']};
+        background-color: ${typeof theme.colors?.brand === 'object' ? theme.colors.brand.DEFAULT : theme.colors?.brand};
       }
 
       .fade-enter-from,
