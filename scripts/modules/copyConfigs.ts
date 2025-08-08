@@ -124,8 +124,8 @@ export const mergeVscodeSettings = () => {
       console.log(`💾 Wrote merged ${filename} to ${targetPath}`);
     };
 
-    mergeJson('settings.json');
-    mergeJson('extensions.json');
+    mergeJson('.vscode/settings.json');
+    mergeJson('.vscode/extensions.json');
 
     spinner.succeed('Merged .vscode settings and extensions');
   } catch (e) {
