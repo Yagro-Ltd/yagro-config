@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.62",
+  "version": "0.1.63",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -111,6 +111,7 @@
     "@typescript-eslint/utils": "^8.39.0",
     "@unocss/eslint-plugin": "^65.4.3",
     "@unocss/preset-icons": "^65.4.3",
+    "@unocss/preset-wind3": "^66.4.2",
     "@vitest/eslint-plugin": "1.1.25",
     "@vue/compiler-sfc": "^3.5.18",
     "@vue/eslint-config-typescript": "^14.3.0",

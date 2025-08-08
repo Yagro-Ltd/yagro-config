@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
 import { checkEngines, updateEnginesInPackage, ensureTsxInstalled } from './modules/nodeEngines';
-import { mergeVscodeSettings, copyYarnrc, copyNvmrc } from './modules/copyConfigs';
+import { mergeVscodeSettings, copyYarnrc, copyNvmrc, copyNpmrc } from './modules/copyConfigs';
 import { installDeps } from './modules/dependencies';
 import { log } from './modules/utils';
 
@@ -23,6 +23,9 @@ const run = () => {
 
   // Copy .nvmrc
   copyNvmrc();
+
+  // Copy .npmrc
+  copyNpmrc();
 
   // Step 6: Install runtime + dev dependencies from config package
   installDeps();
