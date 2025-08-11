@@ -6,56 +6,20 @@ import { root, resolvePath } from './utils';
 
 import ora from 'ora';
 
-export const copyYarnrc = () => {
-  const spinner = ora('Copying .yarnrc.yml').start();
+export const copyRootConfig = (filename: string) => {
+  const spinner = ora(`Copying ${filename}`).start();
 
   try {
-    const sourceYarnrc = resolvePath('.yarnrc.yml');
-    const targetYarnrc = path.resolve(root, '.yarnrc.yml');
+    const sourceFile = resolvePath(filename);
+    const targetFile = path.resolve(root, filename);
 
-    if (existsSync(sourceYarnrc)) {
-      copyFileSync(sourceYarnrc, targetYarnrc);
+    if (existsSync(sourceFile)) {
+      copyFileSync(sourceFile, targetFile);
     }
 
-    spinner.succeed('Copied .yarnrc.yml');
+    spinner.succeed(`Copied ${filename}`);
   } catch (e) {
-    spinner.fail('Failed to copy .yarnrc.yml');
-    throw e;
-  }
-};
-
-export const copyNvmrc = () => {
-  const spinner = ora('Copying .nvmrc').start();
-
-  try {
-    const sourceNvmrc = resolvePath('.nvmrc.yml');
-    const targetNvmrc = path.resolve(root, '.nvmrc.yml');
-
-    if (existsSync(sourceNvmrc)) {
-      copyFileSync(sourceNvmrc, targetNvmrc);
-    }
-
-    spinner.succeed('Copied .nvmrc.yml');
-  } catch (e) {
-    spinner.fail('Failed to copy .nvmrc.yml');
-    throw e;
-  }
-};
-
-export const copyNpmrc = () => {
-  const spinner = ora('Copying .npmrc').start();
-
-  try {
-    const sourceNpmrc = resolvePath('.npmrc.yml');
-    const targetNpmrc = path.resolve(root, '.npmrc.yml');
-
-    if (existsSync(sourceNpmrc)) {
-      copyFileSync(sourceNpmrc, targetNpmrc);
-    }
-
-    spinner.succeed('Copied .npmrc.yml');
-  } catch (e) {
-    spinner.fail('Failed to copy .npmrc.yml');
+    spinner.fail(`Failed to copy ${filename}`);
     throw e;
   }
 };
@@ -82,7 +46,6 @@ export const mergeVscodeSettings = () => {
     }
 
     const fallback = path.join(process.cwd(), '.vscode');
-    console.log(`⚠️ No .vscode directory found up the tree, falling back to: ${fallback}`);
     return fallback;
   };
 
@@ -110,9 +73,6 @@ export const mergeVscodeSettings = () => {
       const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
       const target = existsSync(targetPath) ? JSON.parse(readFileSync(targetPath, 'utf8')) : {};
 
-      console.log(`📦 Source JSON (${filename}):`, JSON.stringify(source, null, 2));
-      console.log(`📦 Target JSON (${filename}):`, JSON.stringify(target, null, 2));
-
       const deepMerge = (a: any, b: any): any => {
         if (Array.isArray(a) && Array.isArray(b)) {
           return Array.from(new Set([...a, ...b]));
@@ -137,10 +97,7 @@ export const mergeVscodeSettings = () => {
             }
           : deepMerge(target, source);
 
-      console.log(`🧩 Merged result (${filename}):`, JSON.stringify(merged, null, 2));
-
       writeFileSync(targetPath, JSON.stringify(merged, null, 2));
-      console.log(`💾 Wrote merged ${filename} to ${targetPath}`);
     };
 
     mergeJson('settings.json');
