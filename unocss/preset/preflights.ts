@@ -1,4 +1,6 @@
-export function getPreflights({ theme }) {
+import type { Preflight, PresetUnoTheme } from 'unocss';
+
+export function getPreflights({ theme }: { theme: PresetUnoTheme }): Preflight[] {
   return [
     {
       getCSS: () => `
@@ -6,7 +8,7 @@ export function getPreflights({ theme }) {
         box-sizing: border-box;
         scroll-behavior: smooth;
         text-rendering: optimizeSpeed;
-        font-family: ${theme.fonts.primary};
+        font-family: ${theme.fontFamily?.primary};
       }
       
       body {

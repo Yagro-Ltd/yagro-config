@@ -5,6 +5,7 @@ import { getTheme } from './theme';
 
 export default definePreset(() => {
   const theme = getTheme();
+
   return {
     name: 'yagro',
     shortcuts,

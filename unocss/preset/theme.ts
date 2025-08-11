@@ -1,6 +1,8 @@
-export function getTheme() {
+import type { PresetUnoTheme } from 'unocss';
+
+export function getTheme(): PresetUnoTheme {
   return {
-    fonts: {
+    fontFamily: {
       primary: 'Montserrat, san-serif',
     },
     colors: {
