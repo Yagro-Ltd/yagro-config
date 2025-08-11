@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
 
 import { root, resolvePath } from './utils';
 
@@ -39,7 +40,7 @@ export const mergeVscodeSettings = () => {
       const candidate = path.join(dir, '.vscode');
 
       if (existsSync(candidate)) {
-        console.log(`✅ Found existing .vscode directory at: ${candidate}`);
+        console.log(chalk.green(`Found existing .vscode directory at: ${candidate}`));
         return candidate;
       }
 

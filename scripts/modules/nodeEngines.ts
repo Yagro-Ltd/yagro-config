@@ -33,15 +33,17 @@ export const checkEngines = () => {
 
   if (errors.length > 0) {
     console.log(chalk.red('❌ Engine version mismatch:'));
-    errors.forEach(e => console.log(chalk.red(`  - ${e}`)));
+    errors.forEach((e) => console.log(chalk.red(`  - ${e}`)));
     console.log(chalk.blue('💡 You can fix this by running:'));
     console.log(chalk.cyan(`  nvm install ${requiredNode} && nvm use ${requiredNode}`));
-    console.log(chalk.cyan(`  corepack enable && corepack prepare yarn@${requiredYarn} --activate`));
+    console.log(
+      chalk.cyan(`  corepack enable && corepack prepare yarn@${requiredYarn} --activate`)
+    );
     process.exit(1);
   }
 
-  console.log(chalk.green('✅ Node, npm, and Yarn versions are valid.'));
-}
+  console.log(chalk.green('Node, npm, and Yarn versions are valid.'));
+};
 
 export const updateEnginesInPackage = () => {
   const spinner = ora('Updating engines in package.json').start();
