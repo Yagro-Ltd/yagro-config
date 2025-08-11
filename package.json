@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.85",
+  "version": "0.1.86",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -37,6 +37,7 @@
     "@vueup/vue-quill": "^1.2.0",
     "@vueuse/core": "^12.4.0",
     "@yagro/composables": "0.1.7",
+    "@yagro/config-unocss": "^0.0.7",
     "ag-grid-community": "^34.0.1",
     "ag-grid-enterprise": "^34.0.1",
     "ag-grid-vue3": "^34.0.1",
