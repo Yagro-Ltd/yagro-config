@@ -15,8 +15,8 @@ const run = () => {
   // Copy .nvmrc
   copyRootConfig('.nvmrc');
 
-  // Copy .npmrc
-  copyRootConfig('.npmrc');
+  // Copy .npmrc - TODO .npmrc is special-cased by npm and is not included in published tarballs
+  //copyRootConfig('.npmrc');
 
   // Check Node, npm, and Yarn versions
   checkEngines();
