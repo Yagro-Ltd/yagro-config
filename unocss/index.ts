@@ -1,11 +1,11 @@
 import type { Preset } from "unocss";
 import { presetUno, presetIcons, presetWebFonts } from "unocss";
 
-export type YagroPresetOptions = {
+export interface YagroPresetOptions {
   prefix?: string;
   fonts?: { provider?: "google" | "none" };
   icons?: Record<string, string>;
-};
+}
 
 export default function yagroPreset(opts: YagroPresetOptions = {}): Preset {
   const {
@@ -17,21 +17,17 @@ export default function yagroPreset(opts: YagroPresetOptions = {}): Preset {
   return {
     name: "@yagro-ltd/config/unocss",
     presets: [
-      presetUno({ preflight: true }),
-      presetIcons({
-        collections: { custom: icons },
-      }),
+      presetUno(),
+      presetIcons({ collections: { custom: icons } }),
       ...(fonts.provider === "google"
-        ? [
-            presetWebFonts({
-              provider: "google",
-              fonts: {
-                montserrat: [
-                  { name: "Montserrat", weights: ["400", "600", "700"], italic: true },
-                ],
-              },
-            }),
-          ]
+        ? [presetWebFonts({
+            provider: "google",
+            fonts: {
+              montserrat: [
+                { name: "Montserrat", weights: ["400", "600", "700"], italic: true },
+              ],
+            },
+          })]
         : []),
     ],
     shortcuts: {
