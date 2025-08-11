@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.66",
+  "version": "0.1.67",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -158,6 +158,11 @@
       "types": "./dist/unocss/index.d.ts"
     }
   },
+  "files": [
+    ".npmrc",
+    ".yarnrc.yml",
+    ".nvmrc"
+  ],
   "engines": {
     "node": "20.19.0",
     "npm": "10.8.2",
