@@ -140,23 +140,19 @@
     "vue-tsc": "^2.1.8"
   },
   "exports": {
+    "./unocss": {
+      "default": "./scripts/unocss/index.ts"
+    },
     "./eslint/v8": {
-      "import": "./dist/eslint/v8.js",
-      "types": "./dist/eslint/v8.d.ts"
+      "default": "./scripts/eslint/v8.ts"
     },
     "./eslint/v9": {
-      "import": "./dist/eslint/v9.js",
-      "types": "./dist/eslint/v9.d.ts"
+      "default": "./scripts/eslint/v9.ts"
     },
     "./prettier": {
-      "import": "./dist/prettier/index.js",
-      "types": "./dist/prettier/index.d.ts"
+      "default": "./scripts/prettier/index.ts"
     },
-    "./tsconfig": "./tsconfig/index.json",
-    "./unocss": {
-      "import": "./dist/unocss/index.js",
-      "types": "./dist/unocss/index.d.ts"
-    }
+    "./tsconfig": "./tsconfig/index.json"
   },
   "engines": {
     "node": "20.19.0",
