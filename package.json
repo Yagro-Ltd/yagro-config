@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.69",
+  "version": "0.1.70",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -61,7 +61,7 @@
     "nuxt": "^3.17.6",
     "ora": "5.4.1",
     "pinia": "^3.0.3",
-    "pinia-plugin-persistedstate": "^4.4.1",
+    "pinia-plugin-persistedstate": "^1.2.0",
     "postcss": "^8.5.5",
     "postcss-custom-media": "^9.1.2",
     "postcss-inline-svg": "^6.0.0",
