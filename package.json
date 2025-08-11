@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.79",
+  "version": "0.1.80",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -145,12 +145,21 @@
       "default": "./unocss/index.ts"
     },
     "./eslint/v8": {
+      "types": "./eslint/v8.d.ts",
+      "import": "./eslint/v8.ts",
+      "require": "./eslint/v8.ts",
       "default": "./eslint/v8.ts"
     },
     "./eslint/v9": {
+      "types": "./eslint/v9.d.ts",
+      "import": "./eslint/v9.ts",
+      "require": "./eslint/v9.ts",
       "default": "./eslint/v9.ts"
     },
     "./prettier": {
+      "types": "./prettier/index.d.ts",
+      "import": "./prettier/index.ts",
+      "require": "./prettier/index.ts",
       "default": "./prettier/index.ts"
     },
     "./tsconfig": "./tsconfig/index.json"
