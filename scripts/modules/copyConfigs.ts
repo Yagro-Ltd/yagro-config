@@ -13,13 +13,18 @@ export const copyRootConfig = (filename: string) => {
     const sourceFile = resolvePath(filename);
     const targetFile = path.resolve(root, filename);
 
-    if (existsSync(sourceFile)) {
-      copyFileSync(sourceFile, targetFile);
+    if (!existsSync(sourceFile)) {
+      spinner.fail(`Source not found: ${sourceFile}`);
+      throw new Error(`Missing source: ${sourceFile}`);
     }
 
-    spinner.succeed(`Copied ${filename}`);
+    mkdirSync(path.dirname(targetFile), { recursive: true });
+    copyFileSync(sourceFile, targetFile);
+
+    spinner.succeed(`Copied ${filename} -> ${targetFile}`);
+    return targetFile;
   } catch (e) {
-    spinner.fail(`Failed to copy ${filename}`);
+    spinner.fail(`Failed to copy ${filename}: ${(e as Error).message}`);
     throw e;
   }
 };
@@ -29,11 +34,9 @@ export const mergeVscodeSettings = () => {
 
   const resolveVscodeDir = () => {
     let dir = process.cwd();
-    console.log(`🔍 Starting search for .vscode from: ${dir}`);
 
     while (true) {
       const candidate = path.join(dir, '.vscode');
-      console.log(`🔍 Checking: ${candidate}`);
 
       if (existsSync(candidate)) {
         console.log(`✅ Found existing .vscode directory at: ${candidate}`);
@@ -56,9 +59,6 @@ export const mergeVscodeSettings = () => {
       const sourcePath = path.resolve(packageRoot, '.vscode', filename);
       const targetDir = resolveVscodeDir();
       const targetPath = path.join(targetDir, filename);
-
-      console.log(`📄 Source path: ${sourcePath}`);
-      console.log(`📄 Target path: ${targetPath}`);
 
       if (!existsSync(sourcePath)) {
         console.log(`❌ Source file does not exist: ${sourcePath}`);
