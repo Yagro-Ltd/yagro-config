@@ -1,3 +1,3 @@
-import config from '@yagro-ltd/config/eslint/v9';
+import config from './eslint/v9';
 
 export default config;

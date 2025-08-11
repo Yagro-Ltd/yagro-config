@@ -1,4 +1,4 @@
-import config from '@yagro-ltd/config/prettier';
+import config from './prettier';
 
 export default {
   ...config,
