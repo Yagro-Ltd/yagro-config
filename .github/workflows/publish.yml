@@ -35,12 +35,10 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies (no scripts)
-        run: |
-          yarn config set enableScripts false
-          yarn install --immutable
+        run: npm install --ignore-scripts
 
       - name: Build package
-        run: yarn build
+        run: npm run build
 
       - name: Publish to GitHub Packages
         run: npm publish
