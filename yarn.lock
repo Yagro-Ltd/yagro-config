@@ -5998,7 +5998,6 @@ __metadata:
     "@vueup/vue-quill": "npm:^1.2.0"
     "@vueuse/core": "npm:^12.4.0"
     "@yagro/composables": "npm:0.1.7"
-    "@yagro/config-unocss": "npm:^0.0.7"
     ag-grid-community: "npm:^34.0.1"
     ag-grid-enterprise: "npm:^34.0.1"
     ag-grid-vue3: "npm:^34.0.1"
@@ -6078,16 +6077,6 @@ __metadata:
   peerDependencies:
     date-fns: ">=2.0.0 <4.0.0"
   checksum: 10c0/2bf330d6b5379ea0eb5403fd404af4049a12d3631c3d5911469fdae27462983797465aad755a4e02f0cee3d0266958fda776852a733a975d8570b14dd207e12f
-  languageName: node
-  linkType: hard
-
-"@yagro/config-unocss@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@yagro/config-unocss@npm:0.0.7"
-  dependencies:
-    "@iconify-json/fa6-solid": "npm:^1.1.21"
-    unocss: "npm:^0.61.0"
-  checksum: 10c0/c03d5e02cd41d8d9cc3ee8487dac278385901d62bc632497e4ccda7d8be10e81541d9225a5a442020c9f0bb6009b799c3c604b50545a5b5f04d882a22aaaaaf0
   languageName: node
   linkType: hard
 
