@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.91",
+  "version": "0.1.92",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -161,6 +161,7 @@
     "./unocss": "./dist/preset-yagro.js"
   },
   "files": [
+    "dist/**",
     "eslint/**",
     "prettier/**",
     "unocss/**",
