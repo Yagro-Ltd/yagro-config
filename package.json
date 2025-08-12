@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.90",
+  "version": "0.1.91",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -10,7 +10,7 @@
     "yagro-init": "./scripts/yagro-init.ts"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json && vite build"
   },
   "author": "Yagro Ltd.",
   "license": "ISC",
@@ -139,12 +139,6 @@
     "vue-tsc": "^2.1.8"
   },
   "exports": {
-    "./unocss": {
-      "types": "./unocss/index.d.ts",
-      "import": "./unocss/index.ts",
-      "require": "./unocss/index.ts",
-      "default": "./unocss/index.ts"
-    },
     "./eslint/v8": {
       "types": "./eslint/v8.d.ts",
       "import": "./eslint/v8.ts",
@@ -163,7 +157,8 @@
       "require": "./prettier/index.ts",
       "default": "./prettier/index.ts"
     },
-    "./tsconfig": "./tsconfig/index.json"
+    "./tsconfig": "./tsconfig/index.json",
+    "./unocss": "./dist/preset-yagro.js"
   },
   "files": [
     "eslint/**",
