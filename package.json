@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.95",
+  "version": "0.1.96",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -74,7 +74,7 @@
     "sass-loader": "^12.4.0",
     "tsx": "^4.19.2",
     "unhead": "^2.0.12",
-    "unocss": "^0.58.0",
+    "unocss": "^0.61.0",
     "villus": "^3.5.2",
     "vite": "6.3.5",
     "vitest": "^3.2.2",
