@@ -6054,7 +6054,7 @@ __metadata:
     unocss: "npm:^0.61.0"
     villus: "npm:^3.5.2"
     vite: "npm:6.3.5"
-    vite-plugin-dts: "npm:^4.5.3"
+    vite-plugin-dts: "npm:^4.5.4"
     vite-plugin-vue-devtools: "npm:^7.7.6"
     vitest: "npm:^3.2.2"
     vue: "npm:^3.5.15"
@@ -17801,7 +17801,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^4.5.3":
+"vite-plugin-dts@npm:^4.5.4":
   version: 4.5.4
   resolution: "vite-plugin-dts@npm:4.5.4"
   dependencies:
