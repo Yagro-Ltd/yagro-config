@@ -4,6 +4,13 @@ export function getPreflights({ theme }: { theme: any }): Preflight[] {
   return [
     {
       getCSS: () => `
+      :root {
+        --section-spacing-sm: 2rem;
+        --section-spacing-md: 2rem;
+        --section-spacing-lg: 3rem;
+        --section-spacing-xl: 3rem;
+      }
+
       html {
         box-sizing: border-box;
         scroll-behavior: smooth;
