@@ -35,7 +35,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies (no scripts)
-        run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+        run: |
+          yarn config set enableScripts false
+          yarn install --immutable
 
       - name: Build package
         run: yarn build
