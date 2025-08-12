@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.87",
+  "version": "0.1.88",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {

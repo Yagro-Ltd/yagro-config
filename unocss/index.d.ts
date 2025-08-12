@@ -1,4 +1,4 @@
-declare module "@yagro/config-unocss" {
-  const config: any;
-  export default config;
-}
+import type { Preset, PresetUnoTheme } from "unocss";
+
+declare const yagroPreset: Preset<PresetUnoTheme>;
+export default yagroPreset;
