@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
-    "postinstall": "yagro-init"
+    "postinstall": "node ./scripts/postinstall-gate.mjs"
   },
   "author": "Yagro Ltd.",
   "license": "ISC",
