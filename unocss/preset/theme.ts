@@ -1,6 +1,4 @@
-import type { PresetUnoTheme } from 'unocss';
-
-export function getTheme(): PresetUnoTheme {
+export function getTheme(): any {
   return {
     fontFamily: {
       primary: 'Montserrat, san-serif',

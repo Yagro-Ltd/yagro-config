@@ -1,6 +1,6 @@
-import type { Preflight, PresetUnoTheme } from 'unocss';
+import type { Preflight } from 'unocss';
 
-export function getPreflights({ theme }: { theme: PresetUnoTheme }): Preflight[] {
+export function getPreflights({ theme }: { theme: any }): Preflight[] {
   return [
     {
       getCSS: () => `

@@ -1,4 +1,4 @@
-import type { Preset, PresetUnoTheme } from 'unocss';
+import type { Preset } from 'unocss';
 
 export interface YagroPresetOptions {
   prefix?: string;
@@ -6,6 +6,6 @@ export interface YagroPresetOptions {
   icons?: Record<string, string>;
 }
 
-declare function yagroPreset(options?: YagroPresetOptions): Preset<PresetUnoTheme>;
+declare function yagroPreset(options?: YagroPresetOptions): Preset<any>;
 
 export default yagroPreset;
