@@ -36,7 +36,7 @@ export default [
       vue: pluginVue,
     },
     rules: {
-      'indent': ['error', 2, { SwitchCase: 1 }],
+      'indent': ['error', 2],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
         'error',
