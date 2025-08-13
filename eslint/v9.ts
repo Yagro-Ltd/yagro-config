@@ -36,6 +36,15 @@ export default [
       vue: pluginVue,
     },
     rules: {
+      "max-len": ["error", {
+        code: 100,
+        tabWidth: 2,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true
+      }],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
         'error',
