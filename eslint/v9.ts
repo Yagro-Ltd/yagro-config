@@ -99,6 +99,7 @@ export default [
       'sort-keys-fix': pluginSortKeysFix,
     },
     rules: {
+      'jsonc/indent': ['error', 2],
       'jsonc/sort-keys': [
         'error',
         {
