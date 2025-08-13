@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "0.1.104",
+  "version": "0.1.105",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -10,8 +10,7 @@
     "yagro-init": "./scripts/yagro-init.ts"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json && vite build",
-    "postinstall": "node ./scripts/postinstall-gate.mjs"
+    "build": "tsc -p tsconfig.build.json && vite build"
   },
   "author": "Yagro Ltd.",
   "license": "ISC",
