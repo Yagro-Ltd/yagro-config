@@ -36,8 +36,8 @@ export const installDeps = () => {
     writeFileSync(targetPkgPath, JSON.stringify(targetPkg, null, 2));
     spinner.succeed('Synced package.json dependencies');
 
+    execSync('yarn add @yagro-ltd/config@latest', { stdio: 'inherit' });
     execSync('yarn install', { stdio: 'inherit' });
-    execSync('yarn add @yagro-ltd/config', { stdio: 'inherit' });
   } catch (err) {
     spinner.fail('❌ Failed to sync dependencies');
     console.error(chalk.red(err));
