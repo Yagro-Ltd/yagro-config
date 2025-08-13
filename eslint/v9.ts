@@ -36,7 +36,6 @@ export default [
       vue: pluginVue,
     },
     rules: {
-      'indent': ['error', 2],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
         'error',
@@ -87,9 +86,20 @@ export default [
           ],
         },
       ],
-      "vue/script-indent": ["error", 2, {
-        "baseIndent": 1
-      }]
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    rules: {
+      indent: 'off',
+      'vue/script-indent': ['error', 2, { baseIndent: 1, switchCase: 1, ignores: [] }],
+      'vue/html-indent': ['error', 2, { baseIndent: 0 }],
+    },
+  },
+  {
+    files: ['**/*.ts'],
+    rules: {
+      indent: ['error', 2],
     },
   },
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
