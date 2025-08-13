@@ -1,8 +1,8 @@
 #!/usr/bin/env tsx
 
-import { checkEngines, updateEnginesInPackage, ensureTsxInstalled } from './modules/nodeEngines';
-import { mergeVscodeSettings, copyRootConfig } from './modules/copyConfigs';
+import { copyRootConfig,mergeVscodeSettings } from './modules/copyConfigs';
 import { installDeps } from './modules/dependencies';
+import { checkEngines, ensureTsxInstalled,updateEnginesInPackage } from './modules/nodeEngines';
 import { log } from './modules/utils';
 
 const run = () => {
