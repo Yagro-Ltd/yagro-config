@@ -93,7 +93,7 @@ export default [
     rules: {
       indent: 'off',
       'vue/script-indent': ['error', 2, { baseIndent: 1, switchCase: 1, ignores: [] }],
-      'vue/html-indent': ['error', 2, { baseIndent: 0 }],
+      'vue/html-indent': ['error', 2, { baseIndent: 1, switchCase: 1, ignores: [] }],
     },
   },
   {
