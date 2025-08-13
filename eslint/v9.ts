@@ -86,6 +86,9 @@ export default [
           ],
         },
       ],
+      "vue/script-indent": ["error", 2, {
+        "baseIndent": 1
+      }]
     },
   },
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
