@@ -1,11 +1,8 @@
 {
-  "yaml.schemas": {
-    "./ingestion/ingestion/ssdcore/schemas/metaschema.json": "ingestion/ingestion/ssdcore/schemas/*.yaml"
-  },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
-    "source.fixAll": "always"
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always"
   },
   "eslint.ignoreUntitled": true,
   "eslint.validate": [
@@ -16,5 +13,8 @@
   ],
   "eslint.format.enable": true,
   "eslint.run": "onSave",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "yaml.schemas": {
+    "./ingestion/ingestion/ssdcore/schemas/metaschema.json": "ingestion/ingestion/ssdcore/schemas/*.yaml"
+  },
 }
