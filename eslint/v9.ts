@@ -1,16 +1,16 @@
-// eslint.config.js
-import jsonc from 'eslint-plugin-jsonc';
+import jsoncPlugin from 'eslint-plugin-jsonc';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 import pluginStorybook from 'eslint-plugin-storybook';
 import pluginVue from 'eslint-plugin-vue';
+import jsoncParser from 'jsonc-eslint-parser';
 import vueParser from 'vue-eslint-parser';
 
 import * as tsParser from '@typescript-eslint/parser';
 
 export default [
+  // Vue + TS
   {
-    // Vue + TS
     ...pluginVue.configs['flat/recommended+typescript+setup'],
     files: ['**/*.{ts,vue}'],
     ignores: ['node_modules/**', '**/package.json'],
@@ -103,17 +103,15 @@ export default [
   // TS indentation
   {
     files: ['**/*.ts'],
-    rules: {
-      indent: ['error', 2],
-    },
+    rules: { indent: ['error', 2] },
   },
 
-  // JSON (strict JSON)
+  // JSON
   {
     files: ['**/*.json'],
     ignores: ['**/package.json'],
-    languageOptions: { parser: jsonc.parsers.json },
-    plugins: { jsonc, 'sort-keys-fix': pluginSortKeysFix },
+    languageOptions: { parser: jsoncParser },
+    plugins: { jsonc: jsoncPlugin, 'sort-keys-fix': pluginSortKeysFix },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],
@@ -126,11 +124,11 @@ export default [
     },
   },
 
-  // JSON with Comments (jsonc)
+  // JSONC
   {
     files: ['**/*.jsonc'],
-    languageOptions: { parser: jsonc.parsers.jsonc },
-    plugins: { jsonc },
+    languageOptions: { parser: jsoncParser },
+    plugins: { jsonc: jsoncPlugin },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],
