@@ -12,7 +12,7 @@ export default [
   {
     ...pluginVue.configs['flat/recommended+typescript+setup' as keyof typeof pluginVue.configs],
     files: ['**/*.{ts,vue}'],
-    ignores: ['node_modules/**'],
+    ignores: ['node_modules/**', '**/package.json'],
     languageOptions: {
       globals: {
         ComputedRef: 'readonly',
@@ -38,12 +38,12 @@ export default [
     rules: {
       "max-len": ["error", {
         code: 100,
-        tabWidth: 2,
-        ignoreTrailingComments: true,
-        ignoreUrls: true,
+        ignoreRegExpLiterals: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        tabWidth: 2
       }],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
@@ -101,8 +101,8 @@ export default [
     files: ['**/*.vue'],
     rules: {
       indent: 'off',
-      'vue/script-indent': ['error', 2, { baseIndent: 1, switchCase: 1, ignores: [] }],
-      'vue/html-indent': ['error', 2, { baseIndent: 1, switchCase: 1, ignores: [] }],
+      'vue/html-indent': ['error', 2, { baseIndent: 1, ignores: [], switchCase: 1 }],
+      'vue/script-indent': ['error', 2, { baseIndent: 1, ignores: [], switchCase: 1 }],
     },
   },
   {
