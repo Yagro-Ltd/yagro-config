@@ -8,10 +8,12 @@ import vueParser from 'vue-eslint-parser';
 
 import * as tsParser from '@typescript-eslint/parser';
 
+const vueFlatRecommended = pluginVue.configs['flat/recommended'];
+
 export default [
   // Vue + TS
   {
-    ...pluginVue.configs['flat/recommended+typescript+setup'],
+    ...vueFlatRecommended,
     files: ['**/*.{ts,vue}'],
     ignores: ['node_modules/**', '**/package.json'],
     languageOptions: {
