@@ -1,8 +1,8 @@
 #!/usr/bin/env tsx
 
-import { copyRootConfig,mergeVscodeSettings } from './modules/copyConfigs';
+import { copyRootConfig, mergeVscodeSettings } from './modules/copyConfigs';
 import { installDeps } from './modules/dependencies';
-import { checkEngines, ensureTsxInstalled,updateEnginesInPackage } from './modules/nodeEngines';
+import { checkEngines, ensureTsxInstalled, updateEnginesInPackage } from './modules/nodeEngines';
 import { log } from './modules/utils';
 
 const run = () => {
@@ -14,6 +14,9 @@ const run = () => {
 
   // Copy .nvmrc
   copyRootConfig('.nvmrc');
+
+  // Copy .editorconfig
+  copyRootConfig('.editorconfig');
 
   // Copy .npmrc - TODO .npmrc is special-cased by npm and is not included in published tarballs
   //copyRootConfig('.npmrc');
