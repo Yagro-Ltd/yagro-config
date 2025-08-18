@@ -8,6 +8,8 @@ import vueParser from 'vue-eslint-parser';
 
 import * as tsParser from '@typescript-eslint/parser';
 
+import type { Linter } from 'eslint';
+
 const vueFlatRecommended = pluginVue.configs['flat/recommended'];
 
 export default [
@@ -31,7 +33,7 @@ export default [
     plugins: {
       'simple-import-sort': pluginSimpleImportSort,
       'sort-keys-fix': pluginSortKeysFix,
-      storybook: pluginStorybook,
+      storybook: pluginStorybook as any,
       vue: pluginVue,
     },
     rules: {
@@ -113,7 +115,7 @@ export default [
     files: ['**/*.json'],
     ignores: ['**/package.json'],
     languageOptions: { parser: jsoncParser },
-    plugins: { jsonc: jsoncPlugin, 'sort-keys-fix': pluginSortKeysFix },
+    plugins: { jsonc: jsoncPlugin as any, 'sort-keys-fix': pluginSortKeysFix },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],
@@ -130,10 +132,10 @@ export default [
   {
     files: ['**/*.jsonc'],
     languageOptions: { parser: jsoncParser },
-    plugins: { jsonc: jsoncPlugin },
+    plugins: { jsonc: jsoncPlugin as any },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],
     },
   },
-];
+] satisfies Linter.Config[];;
