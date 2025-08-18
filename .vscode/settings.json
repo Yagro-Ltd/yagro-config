@@ -1,19 +1,22 @@
 {
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.fixAll.eslint": "always"
   },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
   "eslint.ignoreUntitled": true,
+  "eslint.run": "onSave",
   "eslint.validate": [
     "javascript",
     "typescript",
     "vue",
     "json"
   ],
-  "eslint.format.enable": true,
-  "eslint.run": "onSave",
-  "editor.formatOnSave": true,
   "yaml.schemas": {
     "./ingestion/ingestion/ssdcore/schemas/metaschema.json": "ingestion/ingestion/ssdcore/schemas/*.yaml"
   }

@@ -36,6 +36,7 @@ export default [
       vue: pluginVue,
     },
     rules: {
+      "eol-last": ["error", "always"],
       "max-len": ["error", {
         code: 100,
         ignoreRegExpLiterals: true,
