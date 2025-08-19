@@ -178,7 +178,7 @@
     ".editorconfig"
   ],
   "engines": {
-    "node": "20.19.0",
+    "node": ">=20.19.0",
     "npm": "10.8.2",
     "yarn": "4.9.2"
   }
