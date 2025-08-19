@@ -9,7 +9,6 @@
     "source.fixAll": "always",
     "source.fixAll.eslint": "always"
   },
-  "files.insertFinalNewline": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
@@ -21,6 +20,7 @@
     "vue",
     "json"
   ],
+  "files.insertFinalNewline": true,
   "yaml.schemas": {
     "./ingestion/ingestion/ssdcore/schemas/metaschema.json": "ingestion/ingestion/ssdcore/schemas/*.yaml"
   }
