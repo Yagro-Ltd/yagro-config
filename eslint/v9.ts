@@ -138,4 +138,4 @@ export default [
       'jsonc/indent': ['error', 2],
     },
   },
-] satisfies Linter.Config[];;
+] satisfies Linter.Config[];

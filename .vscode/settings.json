@@ -9,6 +9,7 @@
     "source.fixAll": "always",
     "source.fixAll.eslint": "always"
   },
+  "files.insertFinalNewline": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
