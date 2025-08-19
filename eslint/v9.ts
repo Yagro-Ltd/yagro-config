@@ -14,8 +14,8 @@ const vueFlatRecommended = pluginVue.configs['flat/recommended'];
 
 export default [
   // Vue + TS
+  ...vueFlatRecommended,
   {
-    ...vueFlatRecommended,
     files: ['**/*.{ts,vue}'],
     ignores: ['node_modules/**', '**/package.json'],
     languageOptions: {
