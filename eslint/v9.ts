@@ -92,6 +92,7 @@ export default [
     rules: {
       indent: 'off',
       'vue/html-indent': ['error', 2, { baseIndent: 1, ignores: [], switchCase: 1 }],
+      'vue/multi-word-component-names': 'off',
       'vue/script-indent': ['error', 2, { baseIndent: 1, ignores: [], switchCase: 1 }],
     },
   },
