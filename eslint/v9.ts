@@ -1,3 +1,4 @@
+import type { Linter } from 'eslint';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
@@ -7,8 +8,6 @@ import jsoncParser from 'jsonc-eslint-parser';
 import vueParser from 'vue-eslint-parser';
 
 import * as tsParser from '@typescript-eslint/parser';
-
-import type { Linter } from 'eslint';
 
 const vueFlatRecommended = pluginVue.configs['flat/recommended'];
 
@@ -38,15 +37,8 @@ export default [
     },
     rules: {
       'eol-last': ['error', 'always'],
-      'max-len': ['error', {
-        code: 100,
-        ignoreRegExpLiterals: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignoreTrailingComments: true,
-        ignoreUrls: true,
-        tabWidth: 2,
-      }],
+      'max-len': 'off',
+      'semi': ['error', 'always'],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': ['error', {
         groups: [
