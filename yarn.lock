@@ -7098,6 +7098,7 @@ __metadata:
     nuxt: "npm:^4.0.3"
     ora: "npm:5.4.1"
     pinia: "npm:^3.0.3"
+    playwright: "npm:^1.55.0"
     postcss: "npm:^8.5.5"
     postcss-custom-media: "npm:^9.1.2"
     postcss-inline-svg: "npm:^6.0.0"
@@ -16742,7 +16743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.14.0":
+"playwright@npm:^1.14.0, playwright@npm:^1.55.0":
   version: 1.55.0
   resolution: "playwright@npm:1.55.0"
   dependencies:

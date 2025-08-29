@@ -58,6 +58,7 @@
     "nuxt": "^4.0.3",
     "ora": "5.4.1",
     "pinia": "^3.0.3",
+    "playwright": "^1.55.0",
     "postcss": "^8.5.5",
     "postcss-custom-media": "^9.1.2",
     "postcss-inline-svg": "^6.0.0",
