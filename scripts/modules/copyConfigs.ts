@@ -1,11 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
-
-import { root, resolvePath } from './utils';
-
 import ora from 'ora';
+
+import { resolvePath, root } from './utils';
 
 export const copyRootConfig = (filename: string) => {
   const spinner = ora(`Copying ${filename}`).start();
@@ -91,11 +90,11 @@ export const mergeVscodeSettings = () => {
       const merged =
         filename === 'extensions.json'
           ? {
-              ...target,
-              recommendations: Array.from(
-                new Set([...(target.recommendations || []), ...(source.recommendations || [])])
-              ),
-            }
+            ...target,
+            recommendations: Array.from(
+              new Set([...(target.recommendations || []), ...(source.recommendations || [])])
+            ),
+          }
           : deepMerge(target, source);
 
       writeFileSync(targetPath, JSON.stringify(merged, null, 2));

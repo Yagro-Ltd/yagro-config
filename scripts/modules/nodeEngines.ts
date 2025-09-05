@@ -1,10 +1,9 @@
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-
-import semver from 'semver';
-import chalk from 'chalk';
 import path from 'node:path';
+import chalk from 'chalk';
 import ora from 'ora';
+import semver from 'semver';
 
 const root = process.cwd();
 

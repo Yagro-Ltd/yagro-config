@@ -1,10 +1,9 @@
-import { readFileSync, writeFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
 import { execSync } from 'node:child_process';
-
-import ora from 'ora';
+import { readFileSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
+import ora from 'ora';
 
 export const installDeps = () => {
   const spinner = ora('🔄 Syncing dependencies from config package').start();

@@ -1,9 +1,10 @@
-import { definePreset, presetIcons, presetUno, presetWebFonts, type Preflight } from 'unocss'
-import { shortcuts } from './shortcuts'
-import { getPreflights } from './preflights'
-import { getSafelist } from './safelist'
-import { getPresets } from './presets'
-import { getTheme } from './theme'
+import { definePreset, type Preflight, presetIcons, presetUno, presetWebFonts } from 'unocss';
+
+import { getPreflights } from './preflights';
+import { getPresets } from './presets';
+import { getSafelist } from './safelist';
+import { shortcuts } from './shortcuts';
+import { getTheme } from './theme';
 
 export type Options = {
   prefix?: string
@@ -16,14 +17,14 @@ export default definePreset<Options>((options = {}) => {
 
   return {
     name: 'yagro',
-    theme,
     preflights: getPreflights({ theme }) as Preflight[],
-    shortcuts,
     presets: getPresets({
-      prefix: options.prefix ?? '',
+      fonts: { provider: 'google' },
       icons: options.icons ?? {},
-      fonts: { provider: 'google' }
+      prefix: options.prefix ?? ''
     }),
     safelist: [getSafelist(options)],
-  }
-})
+    shortcuts,
+    theme,
+  };
+});

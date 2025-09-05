@@ -17,7 +17,7 @@ export function getPreflights({ theme }: { theme: any }): Preflight[] {
         text-rendering: optimizeSpeed;
         font-family: ${theme.fontFamily?.primary};
       }
-      
+
       body {
         margin: 0;
         min-height: 100vh;
@@ -35,7 +35,7 @@ export function getPreflights({ theme }: { theme: any }): Preflight[] {
         margin: 0;
         padding: 0;
       }
-      
+
       *,
       *::before,
       *::after {

@@ -1,11 +1,11 @@
-import { presetIcons, presetUno, presetWebFonts,  } from 'unocss'
+import { presetIcons, presetUno, presetWebFonts, } from 'unocss';
 
-export function getPresets (options = {
-  prefix: '',
-  icons: {},
+export function getPresets(options = {
   fonts: {
     provider: 'google' as const
-  }
+  },
+  icons: {},
+  prefix: ''
 }) {
   return [
     presetUno(
@@ -21,16 +21,16 @@ export function getPresets (options = {
       }
     ),
     presetWebFonts({
-      provider: options.fonts.provider,
       fonts: {
         montserrat: [
           {
+            italic: true,
             name: 'Montserrat',
-            weights: ['200', '400', '700'],
-            italic: true
+            weights: ['200', '400', '700']
           }
         ]
-      }
+      },
+      provider: options.fonts.provider
     })
-  ]
+  ];
 }

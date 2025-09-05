@@ -1,5 +1,5 @@
-export function getSafelist (options: { prefix?: string } = {}) {
-  const prefix = options.prefix ?? ''
+export function getSafelist(options: { prefix?: string } = {}) {
+  const prefix = options.prefix ?? '';
 
   return [
     `${prefix}items-end`,
@@ -24,5 +24,5 @@ export function getSafelist (options: { prefix?: string } = {}) {
     ...Array.from({ length: 12 }, (_, i) => `md:${prefix}col-span-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `lg:${prefix}col-span-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `xl:${prefix}col-span-${i + 1}`)
-  ]
+  ];
 }

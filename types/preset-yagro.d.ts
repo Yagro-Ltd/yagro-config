@@ -1,5 +1,5 @@
 declare module '@yagro-ltd/config/unocss' {
-  import type { Preset } from 'unocss'
+  import type { Preset } from 'unocss';
 
   export type Options = {
     prefix?: string
@@ -7,6 +7,6 @@ declare module '@yagro-ltd/config/unocss' {
     icons?: Record<string, string>
   }
 
-  const preset: (opts?: Options) => Preset
-  export default preset
+  const preset: (opts?: Options) => Preset;
+  export default preset;
 }
