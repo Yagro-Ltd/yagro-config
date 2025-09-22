@@ -1,7 +1,6 @@
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import chalk from 'chalk';
 import ora from 'ora';
 import semver from 'semver';
 
@@ -31,17 +30,15 @@ export const checkEngines = () => {
   }
 
   if (errors.length > 0) {
-    console.log(chalk.red('❌ Engine version mismatch:'));
-    errors.forEach((e) => console.log(chalk.red(`  - ${e}`)));
-    console.log(chalk.blue('💡 You can fix this by running:'));
-    console.log(chalk.cyan(`  nvm install ${requiredNode} && nvm use ${requiredNode}`));
-    console.log(
-      chalk.cyan(`  corepack enable && corepack prepare yarn@${requiredYarn} --activate`)
-    );
+    const spinner = ora().fail('❌ Engine version mismatch:');
+    errors.forEach((e) => ora().fail(`  - ${e}`));
+    ora().info('💡 You can fix this by running:');
+    ora().info(`  nvm install ${requiredNode} && nvm use ${requiredNode}`);
+    ora().info(`  corepack enable && corepack prepare yarn@${requiredYarn} --activate`);
     process.exit(1);
   }
 
-  console.log(chalk.green('Node, npm, and Yarn versions are valid.'));
+  ora().succeed('Node, npm, and Yarn versions are valid.');
 };
 
 export const updateEnginesInPackage = () => {

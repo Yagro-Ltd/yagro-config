@@ -7068,7 +7068,6 @@ __metadata:
     autoprefixer: "npm:10.4.21"
     bootstrap: "npm:^5.3.6"
     c8: "npm:^7.11.3"
-    chalk: "npm:^5.5.0"
     chart.js: "npm:^4.5.0"
     chartjs-adapter-date-fns: "npm:^3.0.0"
     clsx: "npm:^2.1.1"
@@ -8396,13 +8395,6 @@ __metadata:
   version: 5.6.0
   resolution: "chalk@npm:5.6.0"
   checksum: 10c0/f8558fc12fd9805f167611803b325b0098bbccdc9f1d3bafead41c9bac61f263357f3c0df0cbe28bc2fd5fca3edcf618b01d6771a5a776b4c15d061482a72b23
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "chalk@npm:5.5.0"
-  checksum: 10c0/23063b544f7c2fe57d25ff814807de561f8adfff72e4f0051051eaa606f772586470507ccd38d89166300eeaadb0164acde8bb8a0716a0f2d56ccdf3761d5e4f
   languageName: node
   linkType: hard
 

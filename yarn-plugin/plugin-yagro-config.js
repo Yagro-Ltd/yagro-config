@@ -4,8 +4,6 @@ module.exports = {
     const { execSync } = require('child_process');
     const { existsSync } = require('fs');
     const path = require('path');
-    const { BaseCommand } = require('@yarnpkg/cli');
-    const { Configuration, Project, MessageName } = require('@yarnpkg/core');
 
     return {
       hooks: {
@@ -14,8 +12,6 @@ module.exports = {
           const yagroConfigPath = path.join(project.cwd, 'node_modules', '@yagro-ltd', 'config');
 
           if (existsSync(yagroConfigPath)) {
-            project.configuration.reportInfo(MessageName.UNNAMED, '🔧 Running Yagro configuration...');
-
             try {
               // Execute the yagro-init script
               const yagroInitPath = path.join(yagroConfigPath, 'scripts', 'yagro-init.ts');
@@ -31,10 +27,8 @@ module.exports = {
                   cwd: project.cwd
                 });
               }
-
-              project.configuration.reportInfo(MessageName.UNNAMED, '✅ Yagro configuration completed');
             } catch (error) {
-              project.configuration.reportWarning(MessageName.UNNAMED, `⚠️ Yagro configuration failed: ${error.message}`);
+              console.warn(`⚠️ Yagro configuration failed: ${error.message}`);
             }
           }
         }

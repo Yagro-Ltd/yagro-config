@@ -2,7 +2,6 @@ import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import chalk from 'chalk';
 import ora from 'ora';
 
 export const installDeps = () => {
@@ -39,7 +38,7 @@ export const installDeps = () => {
     execSync('yarn install', { stdio: 'inherit' });
   } catch (err) {
     spinner.fail('❌ Failed to sync dependencies');
-    console.error(chalk.red(err));
+    spinner.fail(`Error: ${err}`);
     process.exit(1);
   }
 };

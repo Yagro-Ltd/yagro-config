@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -42,7 +42,6 @@
     "animejs": "^4.0.2",
     "autoprefixer": "10.4.21",
     "bootstrap": "^5.3.6",
-    "chalk": "^5.5.0",
     "chart.js": "^4.5.0",
     "chartjs-adapter-date-fns": "^3.0.0",
     "clsx": "^2.1.1",
