@@ -1,0 +1,57 @@
+version: 2
+
+registries:
+  ecr-docker:
+    type: docker-registry
+    url: https://191066642399.dkr.ecr.eu-west-1.amazonaws.com
+    username: ${{secrets.AWS_ACCESS_KEY_ID}}
+    password: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+    replaces-base: true
+
+updates:
+
+  - package-ecosystem: github-actions
+    directories:
+      - /.github/actions/*
+      - /.github/workflows
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 2
+    pull-request-branch-name:
+      separator: '-'
+    commit-message:
+      prefix: ''
+    labels: []
+    groups:
+      github-actions-minor:
+        update-types:
+          - patch
+          - minor
+      github-actions-security:
+        applies-to: security-updates
+        update-types:
+          - patch
+          - minor
+          - major
+
+  - package-ecosystem: npm
+    directory: /**
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 2
+    pull-request-branch-name:
+      separator: '-'
+    commit-message:
+      prefix: ''
+    labels: []
+    groups:
+      js-config-minor:
+        update-types:
+          - patch
+          - minor
+      js-config-security:
+        applies-to: security-updates
+        update-types:
+          - patch
+          - minor
+          - major
