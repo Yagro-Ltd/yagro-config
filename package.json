@@ -1,6 +1,6 @@
 {
   "name": "@yagro-ltd/config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "publishConfig": {
@@ -66,7 +66,6 @@
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
     "posthog-js": "^1.260.1",
-    "prettier": "^3.5.3",
     "primeicons": "^7.0.0",
     "primevue": "^3.12.0",
     "sass": "1.89.2",
@@ -118,12 +117,9 @@
     "@vue/tsconfig": "^0.7.0",
     "c8": "^7.11.3",
     "eslint": "^9.25.1",
-    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsonc": "^2.20.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-storybook": "^9.0.1",
     "eslint-plugin-vue": "^10.0.0",
     "happy-dom": "^18.0.0",
@@ -153,26 +149,21 @@
       "require": "./eslint/v9.ts",
       "default": "./eslint/v9.ts"
     },
-    "./prettier": {
-      "types": "./prettier/index.d.ts",
-      "import": "./prettier/index.ts",
-      "require": "./prettier/index.ts",
-      "default": "./prettier/index.ts"
-    },
     "./tsconfig": "./tsconfig/index.json",
     "./unocss": {
       "types": "./types/preset-yagro.d.ts",
       "import": "./dist/preset-yagro.js"
-    }
+    },
+    "./yarn-plugin": "./yarn-plugin/plugin-yagro-config.js"
   },
   "files": [
     "dist/**",
     "eslint/**",
-    "prettier/**",
     "unocss/**",
     "scripts/**",
     "types/**",
     "tsconfig/**",
+    "yarn-plugin/**",
     ".vscode/**",
     "README.md",
     "package.json",

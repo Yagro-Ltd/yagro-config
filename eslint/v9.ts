@@ -1,7 +1,6 @@
 import type { Linter } from 'eslint';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
-import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 import pluginStorybook from 'eslint-plugin-storybook';
 import pluginVue from 'eslint-plugin-vue';
 import jsoncParser from 'jsonc-eslint-parser';
@@ -31,7 +30,6 @@ export default [
     },
     plugins: {
       'simple-import-sort': pluginSimpleImportSort,
-      'sort-keys-fix': pluginSortKeysFix,
       storybook: pluginStorybook as any,
       vue: pluginVue,
     },
@@ -108,7 +106,6 @@ export default [
     files: ['**/*.json'],
     ignores: ['**/package.json'],
     languageOptions: { parser: jsoncParser },
-    plugins: { jsonc: jsoncPlugin as any, 'sort-keys-fix': pluginSortKeysFix },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],

@@ -4,7 +4,6 @@ const config: ESLint.ConfigData = {
   extends: [
     '@nuxt/eslint-config',
     'eslint:recommended',
-    'prettier',
     'plugin:storybook/recommended',
   ],
   globals: {
@@ -29,7 +28,6 @@ const config: ESLint.ConfigData = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['sort-keys-fix', 'prettier'],
   root: true,
   rules: {
     'simple-import-sort/exports': 'error',

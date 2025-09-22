@@ -21,7 +21,6 @@
   "extends": "./tsconfig/index.json",
   "include": [
     "./eslint",
-    "./prettier",
     "./tsconfig",
     "./unocss",
     "types",
