@@ -22,11 +22,11 @@ In addition a bin script has been written to align Node engines, Yarn configs, .
 ### Option 1: Automatic Setup (Recommended)
 
 ```bash
-# Enable the Yarn plugin for automatic configuration
-yarn plugin import @yagro-ltd/config/yarn-plugin
-
-# Install the config package
+# Install the config package first
 yarn add @yagro-ltd/config@latest
+
+# Then import the plugin using absolute path
+yarn plugin import $(pwd)/node_modules/@yagro-ltd/config/yarn-plugin/plugin-yagro-config.js
 ```
 
 Now `yarn install` will automatically run the configuration script whenever dependencies are installed.

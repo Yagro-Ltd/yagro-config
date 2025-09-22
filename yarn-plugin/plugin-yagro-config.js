@@ -1,10 +1,9 @@
-const { execSync } = require('child_process');
-const { existsSync } = require('fs');
-const path = require('path');
-
 module.exports = {
   name: '@yagro-ltd/plugin-config',
   factory: (require) => {
+    const { execSync } = require('child_process');
+    const { existsSync } = require('fs');
+    const path = require('path');
     const { BaseCommand } = require('@yarnpkg/cli');
     const { Configuration, Project, MessageName } = require('@yarnpkg/core');
 
