@@ -8,7 +8,7 @@ const root = process.cwd();
 
 const requiredNode = '20.19.0';
 const requiredNpm = '10.8.2';
-const requiredYarn = '4.9.2';
+const requiredYarn = '4.10.2';
 
 export const checkEngines = () => {
   const currentNode = process.version;
