@@ -54,7 +54,7 @@
     "leaflet-control-geocoder": "^3.2.1",
     "maska": "^3.1.0",
     "moment-timezone": "^0.6.0",
-    "nuxt": "^4.0.3",
+    "nuxt": "^4.1.2",
     "ora": "5.4.1",
     "pinia": "^3.0.3",
     "playwright": "^1.55.0",
