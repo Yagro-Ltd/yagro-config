@@ -105,6 +105,7 @@ export default [
     files: ['**/*.json'],
     ignores: ['**/package.json'],
     languageOptions: { parser: jsoncParser },
+    plugins: { jsonc: jsoncPlugin as any },
     rules: {
       'eol-last': ['error', 'always'],
       'jsonc/indent': ['error', 2],
