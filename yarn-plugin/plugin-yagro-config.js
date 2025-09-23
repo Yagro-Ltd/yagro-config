@@ -8,6 +8,11 @@ module.exports = {
     return {
       hooks: {
         afterAllInstalled: async (project, options) => {
+          // Skip in CI environments
+          if (process.env.CI || process.env.GITHUB_ACTIONS) {
+            return;
+          }
+
           // Check if @yagro-ltd/config is installed
           const yagroConfigPath = path.join(project.cwd, 'node_modules', '@yagro-ltd', 'config');
 
