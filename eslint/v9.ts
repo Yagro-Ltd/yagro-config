@@ -62,7 +62,6 @@ export default [
           ['^.+\\.d\\.ts$'],
         ],
       }],
-      'sort-keys-fix/sort-keys-fix': 'warn',
       'vue/attributes-order': ['error', {
         alphabetical: false,
         order: [
@@ -114,7 +113,6 @@ export default [
         { order: ['name', 'version', 'description', 'license'], pathPattern: '^$' },
         { order: { type: 'asc' }, pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$' },
       ],
-      'sort-keys-fix/sort-keys-fix': ['warn', 'asc', { caseSensitive: false, natural: true }],
     },
   },
 
